@@ -5,14 +5,14 @@ int main()
 
 	for (int i = 0; i < 10;i++)
 	{
-		int cell = (int)nums[i]; // èçìåíåíèå òèïà äðîáíîãî íà öåëîå
+		int cell = (int)nums[i]; // izmenenie tipa s drobogo na celoe
 
-		nums[i] = nums[i] - cell; // ÓÁÐÀËÈ ÖÅËÓÞ ×ÀÑÒÜ
+		nums[i] = nums[i] - cell; // ubrali celuyu chast'
 
 		printf("%f  ---  %d \n", nums[i]  , cell);
 	}
 
-	// ÏÎÈÑÊ ÌÈÍÈÌÀËÜÍÎÉ ÄÐÎÁÍÎÉ ×ÀÑÒÈ
+	// poisk minimal'noj drobnoj chasti
 	double min = 1;
 	for (int i = 0; i < 10; i++)
 	{

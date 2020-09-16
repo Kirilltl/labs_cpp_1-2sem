@@ -5,13 +5,14 @@ int main()
 
 	for (int i = 0; i < 10;i++)
 	{
-		int cell = (int)nums[i];
+		int cell = (int)nums[i]; // èçìåíåíèå òèïà äðîáíîãî íà öåëîå
 
-		nums[i] = nums[i] - cell;
+		nums[i] = nums[i] - cell; // ÓÁÐÀËÈ ÖÅËÓÞ ×ÀÑÒÜ
 
 		printf("%f  ---  %d \n", nums[i]  , cell);
 	}
 
+	// ÏÎÈÑÊ ÌÈÍÈÌÀËÜÍÎÉ ÄÐÎÁÍÎÉ ×ÀÑÒÈ
 	double min = 1;
 	for (int i = 0; i < 10; i++)
 	{

@@ -65,3 +65,12 @@ dkms.conf
 Lab3/.vs/Lab3/v16/.suo
 Lab3/.vs/Lab3/v16/.suo
 Lab3/.vs/Lab3/v16/.suo
+*.sln
+.vs/lab1/v16/.suo
+lab1.sln
+*.sln
+*.recipe
+*.recipe
+lab1/Debug/lab1.exe.recipe
+*.user
+*.user

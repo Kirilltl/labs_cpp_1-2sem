@@ -4,18 +4,18 @@ int main()
 	char mass[100]  = "hello goodby dog cat car";
 
 
-	char* uknaslo[100];
-	int che = 0;
+	char* uknaslo[100]; // ykazatel on single words 
+	int che = 0;// number of words
 
 	uknaslo[0] = &mass[0];
 	che++;
 
 
-	for (int i = 0; mass[i] != '\0'; i++)
+	for (int i = 0; mass[i] != '\0'; i++)// simvol konza stroki
 	{
 		if (mass[i] == ' ')
 		{
-			mass[i] = '\0';
+			mass[i] = '\0';// razdel'aem stroky na otdeln slova
 			uknaslo[che] = &mass[i + 1];
 			che++;
 		}
@@ -37,8 +37,8 @@ int main()
 			}
 		}
 
-
+		
 		printf("%s\n", uknaslo[minI]);
-		*uknaslo[minI] = 127;
+		*uknaslo[minI] = 127;// iskluchaem yge ispolsov slova,
 	}
 }

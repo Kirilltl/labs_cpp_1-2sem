@@ -23,11 +23,7 @@ int main()
 	scanf("%d",&b );
 
 
-	//if (f(a, b) >= 0)
+	if (f(a, b) >= 0)
 		printf("f(%d,%d)= %d\n", a, b, f(a, b));
-	//else
-	//	printf("Error\n");
-
-
-	
+	else printf(" This f(%d,%d) does not have a degree\n",a,b);
 }

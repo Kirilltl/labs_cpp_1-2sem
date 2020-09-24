@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-	int a = 0, b = 0,r=0;
+	int a = 0, b = 0;
 	printf("Input A:");
 	scanf("%d", &a);
 	printf("Input B:");
@@ -18,6 +18,6 @@ int main()
 			b = b - a;
         }
 	}
-	printf("nod %d",a);
+	printf("NOD: %d",a);
 	return 0;
 }

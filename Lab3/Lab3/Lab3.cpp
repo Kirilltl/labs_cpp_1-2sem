@@ -13,10 +13,21 @@ for (int i = 1; i < 10; i++)
 	}
 return -1;
 }
+
+
 int main()
 {
-	printf("%d\n", f(25, 5));
-	printf("%d\n", f(27, 3));
-	printf("%d\n", f(23, 5));
-	printf("%d\n", f(128, 2));
+	int b=0;
+	int a = 0;
+	scanf("%d", &a);
+	scanf("%d",&b );
+
+
+	//if (f(a, b) >= 0)
+		printf("f(%d,%d)= %d\n", a, b, f(a, b));
+	//else
+	//	printf("Error\n");
+
+
+	
 }

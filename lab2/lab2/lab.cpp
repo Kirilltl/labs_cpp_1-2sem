@@ -1,9 +1,11 @@
 #include<stdio.h>
 int main()
 {
-	char mass[] = "hello goodby dog cat car";
+	char mass[100]  = "hello goodby dog cat car";
+
+
 	char* uknaslo[100];
-	int che=0;
+	int che = 0;
 
 	uknaslo[0] = &mass[0];
 	che++;
@@ -21,8 +23,22 @@ int main()
 
 	printf("che=%d\n", che);
 	
-	for(int i=0; i<che; i++)
+	for (int d = 0; d < che; d++)
 	{
-		printf("%s\n", uknaslo[i]);
+
+		int min = 127; // max value of char
+		int minI = 0;
+		for (int i = 0; i < che; i++)
+		{
+			if (*uknaslo[i] < min) 
+			{
+				minI = i;
+				min = *uknaslo[i];
+			}
+		}
+
+
+		printf("%s\n", uknaslo[minI]);
+		*uknaslo[minI] = 127;
 	}
 }

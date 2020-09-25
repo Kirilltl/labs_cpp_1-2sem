@@ -1,12 +1,12 @@
 # include <stdio.h>
 int main()
 {
-	float nums[10] = { -1.9993545, 2.5654, 5.6575, 2.34, -4.222, 3.45, 3.555, 7.787, 1.367, 5.56 };
+	float nums[10]; //= { -1.9993545, 2.5654, 5.6575, 2.34, -4.222, 3.45, 3.555, 7.787, 1.367, 5.56 };
 
 
 	for (int i = 0; i < 10; i++)
 	{
-	//	scanf("%f", &nums[i]);
+		scanf("%f", &nums[i]);//esli moi chisla to ybrat'
 
 		int cell = (int)nums[i]; // izmenenie tipa s drobogo na celoe
 

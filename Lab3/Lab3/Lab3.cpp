@@ -13,7 +13,9 @@ for (int i = 1; i < 20; i++){
 int main(){
 	int a = 0;
 	int b = 0;
+	printf("INPUT A:");
 	scanf("%d", &a);
+	printf("INPUT B:");
 	scanf("%d", &b);
      if (f(a, b) >= 0)
 		printf("%d ^ %d = %d\n",a,f(a, b),b);

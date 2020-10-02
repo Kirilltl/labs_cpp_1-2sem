@@ -1,7 +1,7 @@
 #include <stdio.h>
 int f(int a, int b){
 	int result = 1;
-for (int i = 1; i < 20; i++){
+for (int i = 1; i < 100; i++){
 		result = result * a;
 		if (result == b)
 		{

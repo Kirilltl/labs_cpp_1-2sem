@@ -39,6 +39,6 @@ int main()
 
 		
 		printf("%s\n", uknaslo[minI]);
-		*uknaslo[minI] = 127;// iskluchaem yge ispolsov slova,
+		*uknaslo[minI] = 127;// iskluchaem yge ispolsov slova
 	}
 }

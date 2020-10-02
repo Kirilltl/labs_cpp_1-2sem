@@ -25,7 +25,7 @@ int main()
 	
 	for (int d = 0; d < che; d++)
 	{
-
+		
 		int min = 127; // max value of char
 		int minI = 0;
 		for (int i = 0; i < che; i++)

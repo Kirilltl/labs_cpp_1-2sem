@@ -9,8 +9,6 @@ int main()
 
 	uknaslo[0] = &mass[0];
 	che++;
-
-
 	for (int i = 0; mass[i] != '\0'; i++)// simvol konza stroki
 	{
 		if (mass[i] == ' ')
@@ -21,9 +19,11 @@ int main()
 		}
 	}
 
+
+	
 	printf("che=%d\n", che);
 	
-	for (int d = 0; d < che; d++)
+	    for (int d = 0; d < che; d++)    //chtob vuvelis vse slova
 	{
 		
 		int min = 127; // max value of char
@@ -34,11 +34,10 @@ int main()
 			{
 				minI = i;
 				min = *uknaslo[i];
+				
 			}
 		}
-
-		
-		printf("%s\n", uknaslo[minI]);
+          printf("%s\n", uknaslo[minI]);
 		*uknaslo[minI] = 127;// iskluchaem yge ispolsov slova
 	}
 }

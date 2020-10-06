@@ -2,34 +2,34 @@
 #include <stdlib.h>
 #include<string.h>
 
-/*
+
 int comparesl(const char* str1, const char* str2)
 {
-	const unsigned char* s1 = (const unsigned char*)str1;
-	const unsigned char* s2 = (const unsigned char*)str2;
+	const char* s1 = (const char*)str1;
+	const char* s2 = (const char*)str2;
 
-	unsigned char c1 = (unsigned char)*s1;
-	unsigned char c2 = (unsigned char)*s2;
+	 char c1 = (char)*s1;
+	 char c2 = (char)*s2;
 
 	while (c1 == c2)
 	{
 
-		if (c1 == '\0')
+		if (c1 == '\0') // есди достигнут конец слова
 			return c1 - c2;
 
 		*s1++;
 		*s2++;
 
-		c1 = (unsigned char)*s1;
-		c2 = (unsigned char)*s2;
+		c1 = (char)*s1;
+		c2 = (char)*s2;
 	}
 	return c1 - c2;
-}*/
+}
 
 int alfasort(const void* slovo1, const void* slovo2) // compare two objects
 {
-	return strcmp(*(char**)slovo1, *(char**)slovo2); // compare two strings: return 0,1,-1 
-	//return comparesl(*(char**)slovo1, *(char**)slovo2);
+	//return strcmp(*(char**)slovo1, *(char**)slovo2); // compare two strings: return 0,1,-1 
+	return comparesl(*(char**)slovo1, *(char**)slovo2);
 
 	// char** - это указатель на char*
 	// *slovo1 - это значение этого указателя на char*

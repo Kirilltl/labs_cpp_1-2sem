@@ -1,22 +1,14 @@
 # include <stdio.h>
+# include <math.h>
 int main()
 {
-	float nums[10] = { -1.9993545, 2.5654, 5.6575, 2.34, -4.222, 3.45, 3.555, 7.787, 1.367, 5.56 };
+	float nums[10] = { -1.9993545, 2.5654,-0.3, 2.34, -4.222, 3.45, 3.555, sqrt(2), 1.367, 5.56 };
 
 
 	for (int i = 0; i < 10; i++)
 	{
-		
-
-		int cell = (int)nums[i]; // izmenenie tipa s drobogo na celoe
-
-
-		nums[i] = nums[i] - cell; // ubrali celuyu chast'
-		if (nums[i] < 0)
-		{
-			nums[i] = -nums[i];
-		}
-		printf("%f  ---  %d \n", nums[i], cell);
+		nums[i] = nums[i] - floor(nums[i]);
+		printf("drob. chast: %f   \n", nums[i]);
 
 	}
 

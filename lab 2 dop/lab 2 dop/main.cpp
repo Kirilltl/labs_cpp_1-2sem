@@ -3,43 +3,36 @@
 #include<string.h>
 
 
-int comparesl(const char* str1, const char* str2)
+// s1 ukazyvaet na 1-yu bukvu v 1-m slove
+// s2 ukazyvaet na 1-yu bukvu vo 2-m slove
+int comparesl(char* s1, char* s2)
 {
-	const char* s1 = (const char*)str1;
-	const char* s2 = (const char*)str2;
-
-	 char c1 = (char)*s1;
-	 char c2 = (char)*s2;
-
-	while (c1 == c2)
+	while (1)               // beskonechnyj cikl
 	{
+		char c1 = *s1;     // c1 - eto bukva, na kotoruyu ukazyvaet s1
+		char c2 = *s2;     // c2 - eto bukva, na kotoruyu ukazyvaet s2
 
-		if (c1 == '\0') // есди достигнут конец слова
+		if (c1 == '\0')    // esli dostignut konec slova, vyxodim iz cikla
 			return c1 - c2;
 
-		*s1++;
-		*s2++;
+		if (c1 != c2)      // esli bukvy raznye, vyxodim iz cikla
+			return c1 - c2;
 
-		c1 = (char)*s1;
-		c2 = (char)*s2;
+		*s1++;             // dvigaem ukazatel na sleduyuschuyu bukvu  v 1-m slove
+		*s2++;             // dvigaem ukazatel na sleduyuschuyu bukvu vo 2-m slove
 	}
-	return c1 - c2;
 }
 
 int alfasort(const void* slovo1, const void* slovo2) // compare two objects
 {
 	//return strcmp(*(char**)slovo1, *(char**)slovo2); // compare two strings: return 0,1,-1 
 	return comparesl(*(char**)slovo1, *(char**)slovo2);
-
-	// char** - это указатель на char*
-	// *slovo1 - это значение этого указателя на char*
-
 }
 
 
 int main()
 {
-	char mass[100] = "hello goodby dog cat car";
+	char mass[100] = "does goodby dog cat car";
 
 
 	char* uknaslo[100]; // ykazatel on single words 

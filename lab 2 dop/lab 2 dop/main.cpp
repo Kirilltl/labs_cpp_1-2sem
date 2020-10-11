@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include<string.h>
 
-
+ 
 // s1 ukazyvaet na 1-yu bukvu v 1-m slove
 // s2 ukazyvaet na 1-yu bukvu vo 2-m slove
 int comparesl(char* s1, char* s2)
@@ -32,7 +32,13 @@ int alfasort(const void* slovo1, const void* slovo2) // compare two objects
 
 int main()
 {
-	char mass[100] = "does goodby dog cat car";
+	
+char simv[] = {',' ,'.'};
+	
+	
+	
+	
+char mass[100] = "does, goodby. dog.. cat.... car";
 
 
 	char* uknaslo[100]; // ykazatel on single words 
@@ -42,7 +48,7 @@ int main()
 	che++;
 	for (int i = 0; mass[i] != '\0'; i++)// simvol konza stroki
 	{
-		if (mass[i] == ' ')
+		if ((mass[i] == ' ') || (mass[i] == simv[i]))
 		{
 			mass[i] = '\0';// razdel'aem stroky na otdeln slova
 			uknaslo[che] = &mass[i + 1];

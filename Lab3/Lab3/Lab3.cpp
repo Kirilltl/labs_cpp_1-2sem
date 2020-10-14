@@ -1,9 +1,8 @@
 #include <stdio.h>
-//Scitaet Kolvo Chisel Ymnog Na Seba
 int find_power(int a, int b)
 {
 	int result = 1;
-	for (int i = 1;i != b; i++)  //  second condition always true,not example that make it false 
+	for (int i = 1;i != b; i++)  //  Second condition always true,not example that make it false 
 	    {
 			result *= a;
 			if (result == b)

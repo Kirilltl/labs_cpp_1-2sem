@@ -6,13 +6,12 @@ int find_power(int a, int b)
 	    {
 			result *= a;
 			if (result == b)
-			{
-				return i;
-			}
+				{
+					return i;
+				}
 	    }
 	return -1;
 }
-
 int main() 
 {
 	int a = 0;

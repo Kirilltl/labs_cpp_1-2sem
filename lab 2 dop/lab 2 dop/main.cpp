@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include <stdlib.h>
 #include<string.h>
+
 int comparesl(char* s1, char* s2)  // s1 ukaz na 1-u bukv v 1-m slov;s2 ukaz na 1-u bukv vo 2-m slov
 {
 	while (1)               // beskonech cikl
@@ -34,9 +35,8 @@ for (int i = 0; mass[i] != '\0'; i++)// simvol konza stroki
 		uknaslo[che] = &mass[i + 1];
 		che++;
 	}
-	
 }
-printf("che=%d", che);
+printf("che=%d \n", che);
 qsort(uknaslo, che, sizeof(char*), alfasort);
 	for (int i = 0; i < che; i++)
 		printf("%s \n", uknaslo[i]);

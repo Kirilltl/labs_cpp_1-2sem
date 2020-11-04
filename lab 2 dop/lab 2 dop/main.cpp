@@ -9,7 +9,7 @@ int comparesl(char* s1, char* s2)
 					return c1 - c2;
 				if (c1 != c2)      
 					return c1 - c2;
-			*s1++;             
+		    *s1++;             
 		    *s2++;             
 		}
 }

@@ -16,7 +16,7 @@ void perevorotword(char* b)
 }
 int main()
 {
-	char mass[] = " olleh esaelp evig em a sulp ";
+	char mass[] = "olleh esaelp evig em a sulp";
 	char* uknaslo[100];
 	int che = 0;
 	uknaslo[0] = &mass[0];

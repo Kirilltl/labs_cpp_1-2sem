@@ -8,9 +8,8 @@ int floor(float a)
 }
 int main()
 {
-	float nums[10] = { -1.99, 2.565,-0.3, 2.34, -4.222, 3.45, 3.555,1.3, 1.367, 5.56 };
-	
-    for (int i = 0; i < 10; i++)
+	float nums[10] = { -1.98, 2.565,-0.3, 2.34, -4.222, 3.45, 3.555,1.3, 1.367, 5.56 };
+	for (int i = 0; i < 10; i++)
 	{
 		printf(" The number i entered: %f \n ", nums[i]);
 		nums[i] = nums[i] - floor(nums[i]);

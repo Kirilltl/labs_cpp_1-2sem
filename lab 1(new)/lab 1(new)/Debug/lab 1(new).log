@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\github\labs\lab 1(new)\lab 1(new)\Source.cpp(6,8): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\github\labs\lab 1(new)\lab 1(new)\Source.cpp(15,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  lab 1(new).vcxproj -> C:\github\labs\lab 1(new)\lab 1(new)\Debug\lab 1(new).exe

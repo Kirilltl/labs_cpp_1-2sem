@@ -39,10 +39,10 @@ uknaslo[0] = &mass[0];
 che++;
 	for (int i = 0; mass[i] != '\0'; i++)
 	{
-		if ((mass[i] == ' ') || (mass[i] ==  '.') || (mass[i] == ','))
+		if ((mass[i] == ' ') || (mass[i] == '.') || (mass[i] == ','))
 		{
-			mass[i] = '\0'; 
-			uknaslo[che] = &mass[i + 1]; 
+			mass[i] = '\0';
+			uknaslo[che] = &mass[i + 1];
 			che++;
 		}
 	}

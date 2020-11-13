@@ -1,31 +1,14 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30611.23
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lab4", "lab4\lab4.vcxproj", "{84688489-3EC9-44A2-A4EF-5841207C8017}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{84688489-3EC9-44A2-A4EF-5841207C8017}.Debug|x64.ActiveCfg = Debug|x64
-		{84688489-3EC9-44A2-A4EF-5841207C8017}.Debug|x64.Build.0 = Debug|x64
-		{84688489-3EC9-44A2-A4EF-5841207C8017}.Debug|x86.ActiveCfg = Debug|Win32
-		{84688489-3EC9-44A2-A4EF-5841207C8017}.Debug|x86.Build.0 = Debug|Win32
-		{84688489-3EC9-44A2-A4EF-5841207C8017}.Release|x64.ActiveCfg = Release|x64
-		{84688489-3EC9-44A2-A4EF-5841207C8017}.Release|x64.Build.0 = Release|x64
-		{84688489-3EC9-44A2-A4EF-5841207C8017}.Release|x86.ActiveCfg = Release|Win32
-		{84688489-3EC9-44A2-A4EF-5841207C8017}.Release|x86.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B5FD680A-2030-4053-A2D1-A1085090A90E}
-	EndGlobalSection
-EndGlobal
+﻿"lab4.exe" (Win32). Загружено "C:\github\labs\lab4\Debug\lab4.exe". Символы загружены.
+"lab4.exe" (Win32). Загружено "C:\Windows\SysWOW64\ntdll.dll". 
+"lab4.exe" (Win32). Загружено "C:\Windows\SysWOW64\kernel32.dll". 
+"lab4.exe" (Win32). Загружено "C:\Windows\SysWOW64\KernelBase.dll". 
+"lab4.exe" (Win32). Загружено "C:\Windows\SysWOW64\apphelp.dll". 
+"lab4.exe" (Win32). Загружено "C:\Windows\SysWOW64\vcruntime140d.dll". 
+"lab4.exe" (Win32). Загружено "C:\Windows\SysWOW64\ucrtbased.dll". 
+Поток 0x1870 завершился с кодом 0 (0x0).
+"lab4.exe" (Win32). Загружено "C:\Windows\SysWOW64\kernel.appcore.dll". 
+"lab4.exe" (Win32). Загружено "C:\Windows\SysWOW64\msvcrt.dll". 
+"lab4.exe" (Win32). Загружено "C:\Windows\SysWOW64\rpcrt4.dll". 
+Поток 0x457c завершился с кодом 0 (0x0).
+Поток 0x4dd8 завершился с кодом 0 (0x0).
+Программа "[16228] lab4.exe" завершилась с кодом 0 (0x0).

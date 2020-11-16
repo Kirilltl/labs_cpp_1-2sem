@@ -12,10 +12,10 @@ float nums[10];
 	for (int i = 0; i < 10; i++)
 	{
 		printf("Input number:");
-		scanf("%f", &nums[i]);
-		if (nums[i] < 0)
+		scanf( "%f", &nums[i] );
+		if (nums[i] <= 0)
 		{
-			printf("you can not enter negative numbers \n");
+			printf("You can not enter negative numbers \n");
 			nums[i] = 1;
 			printf("\n");
 		}

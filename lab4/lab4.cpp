@@ -16,7 +16,7 @@ void perevorotword(char* b)
 }
 int main()
 {
-	char mass[] = "olleh esaelp evig em a sulp";
+	char mass[] = "olleh woh era uoy";
 	char* uknaslo[100];
 	int che = 0;
 	uknaslo[0] = &mass[0];
@@ -41,3 +41,17 @@ int main()
 		}
 	}
 }
+/*
+char uknaslo[5][100];
+for(int i=0;i<5;i++)
+{
+scanf("%s",uknaslo[i]);
+for(int j=0;j<100;j++)
+{
+if (uknaslo[i][j] == '.' || uknaslo[i][j] == ',')
+{
+uknaslo[i][j] == ' ';
+}
+}
+}
+*/

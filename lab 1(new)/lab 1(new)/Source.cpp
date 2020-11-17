@@ -13,7 +13,7 @@ float nums[10];
 	{
 		printf("Input number:");
 		scanf( "%f", &nums[i] );
-		if (nums[i] <= 0)
+		if (nums[i] < 0)
 		{
 			printf("You can not enter negative numbers \n");
 			nums[i] = 1;

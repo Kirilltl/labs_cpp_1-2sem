@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-	char mass[100]  = "hello goodby dog cat car";
+	char mass[100]  = "dom dog hello cat car";
 
 
 	char* uknaslo[100]; // ykazatel on single words 

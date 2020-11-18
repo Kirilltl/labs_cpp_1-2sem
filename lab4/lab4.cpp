@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<stdlib.h>
+//#include<stdlib.h>
 int lengthword(char* a) 
 {
 	int res = 0;
@@ -43,17 +43,3 @@ int main()
 		}
 	}
 }
-/*
-char uknaslo[5][100];
-for(int i=0;i<5;i++)
-{
-scanf("%s",uknaslo[i]);
-for(int j=0;j<100;j++)
-{
-if (uknaslo[i][j] == '.' || uknaslo[i][j] == ',')
-{
-uknaslo[i][j] == ' ';
-}
-}
-}
-*/

@@ -13,22 +13,20 @@ int main()
 	for ( ; ; )
 	{
 		printf("Input number:");
-
-		while (scanf("%f", &nums[i]) != 1) { // scan vozvraschaet 0 pri oshibke
-			printf("Invalid number!\n ");
-			while (getchar() != '\n');//izbavlyaemsja ot musora
-		}
-
+		while (scanf("%f", &nums[i]) != 1)
+		{ 
+			printf("Invalid number! Try again! \n");
+			while (getchar() != '\n');
+	    }
 		if (nums[i] < 0)
 		{
-			printf("Number must be >= 0! \n");
+			printf("Invalid number! \n");
 			continue;
 		}
 		else
 		{
 			nums[i] = nums[i] - floor(nums[i]);
 			printf("Drob.chast of this number: %f \n", nums[i]);
-			
 			if (i == 9)
 			{
 				break;

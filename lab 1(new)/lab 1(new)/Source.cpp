@@ -1,18 +1,18 @@
 # include <stdio.h>
-int floor(float a) 
+int floor(float a)
 {
 	int res = (int)a;
 	if (a < 0)
-		res=a-1;
+		res = a - 1;
 	return res;
 }
 int main()
 {
-float nums[10];
+	float nums[10];
 	for (int i = 0; i < 10; i++)
 	{
 		printf("Input number:");
-		scanf( "%f", &nums[i] );
+		scanf("%f", &nums[i]);
 		if (nums[i] < 0)
 		{
 			printf("You can not enter negative numbers \n");
@@ -26,12 +26,12 @@ float nums[10];
 			printf("\n");
 		}
 	}
-double min = 1;
+	double min = 1;
 	for (int i = 0; i < 10; i++)
 	{
 		if (nums[i] < min)
 		{
-			min =  nums[i];
+			min = nums[i];
 		}
 	}
 	printf("Min drob.chast: %f", min);

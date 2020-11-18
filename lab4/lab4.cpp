@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 int lengthword(char* a) 
 {
 	int res = 0;
@@ -16,7 +17,8 @@ void perevorotword(char* b)
 }
 int main()
 {
-	char mass[] = "olleh woh era uoy";
+	char mass[100];
+	gets_s(mass);
 	char* uknaslo[100];
 	int che = 0;
 	uknaslo[0] = &mass[0];

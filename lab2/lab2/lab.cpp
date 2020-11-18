@@ -1,7 +1,9 @@
 #include<stdio.h>
+#include<stdlib.h>
 int main()
 {
-	char mass[100]  = "dom dog hello cat car";
+	char mass[100];
+	gets_s(mass);
 
 
 	char* uknaslo[100]; // ykazatel on single words 

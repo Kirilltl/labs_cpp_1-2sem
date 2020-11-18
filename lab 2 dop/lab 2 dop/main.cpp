@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 int comparesl(char* s1, char* s2)
 {
 	while (1)
@@ -30,9 +31,12 @@ void qsort(char* uknaslo[], int che)
 		}
 	}
 }
+
 int main()
 {
-	char mass[] = "does goodby.,. dog., cat car";
+	char mass[100];
+	gets_s(mass);
+
 	char* uknaslo[100];
 	int che = 0;
 	uknaslo[0] = &mass[0];
@@ -54,17 +58,5 @@ int main()
 			printf("%s \n", uknaslo[i]);
 	}
 }
-/*
-char uknaslo[5][100];
-for(int i=0;i<5;i++)
-{
-scanf("%s",uknaslo[i]);
-for(int j=0;j<100;j++)
-{
-if (uknaslo[i][j] == '.' || uknaslo[i][j] == ',')
-{
-uknaslo[i][j] == ' ';
-}
-}
-}
-*/
+
+

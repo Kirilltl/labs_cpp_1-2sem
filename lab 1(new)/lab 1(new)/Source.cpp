@@ -13,18 +13,9 @@ int main()
 	{
 		printf("Input number:");
 		scanf("%f", &nums[i]);
-		if (nums[i] < 0)
-		{
-			printf("You can not enter negative numbers \n");
-			nums[i] = 1;
-			printf("\n");
-		}
-		else
-		{
-			nums[i] = nums[i] - floor(nums[i]);
-			printf("Drob.chast of this number: %f \n", nums[i]);
-			printf("\n");
-		}
+		nums[i] = nums[i] - floor(nums[i]);
+		printf("Drob.chast of this number: %f \n", nums[i]);
+		printf("\n");
 	}
 	double min = 1;
 	for (int i = 0; i < 10; i++)

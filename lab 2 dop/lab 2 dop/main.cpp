@@ -31,12 +31,10 @@ void qsort(char* uknaslo[], int che)
 		}
 	}
 }
-
 int main()
 {
 	char mass[100];
 	gets_s(mass);
-
 	char* uknaslo[100];
 	int che = 0;
 	uknaslo[0] = &mass[0];

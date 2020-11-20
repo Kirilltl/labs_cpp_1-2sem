@@ -1,5 +1,4 @@
 #include<stdio.h>
-//#include<stdlib.h>
 int lengthword(char* a) 
 {
 	int res = 0;

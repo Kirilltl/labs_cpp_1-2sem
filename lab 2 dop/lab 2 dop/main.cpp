@@ -1,12 +1,11 @@
 #include<stdio.h>
-//#include<stdlib.h>
 int comparesl(char* s1, char* s2)
 {
 	while (1)
 	{
 		char c1 = *s1;
 		char c2 = *s2;
-		if (c1 == '\0')
+		if (c1 == '\0'  || c2 == '\0')
 			return c1 - c2;
 		if (c1 != c2)
 			return c1 - c2;
@@ -33,6 +32,7 @@ void qsort(char* uknaslo[], int che)
 }
 int main()
 {
+	printf("Input number:");
 	char mass[100];
 	gets_s(mass);
 	char* uknaslo[100];
@@ -41,7 +41,7 @@ int main()
 	che++;
 	for (int i = 0; mass[i] != '\0'; i++)
 	{
-		if ((mass[i] == ' ') || (mass[i] == '.') || (mass[i] == ','))
+		if(((mass[i] < 'A') || (mass[i] > 'Z')) && ((mass[i] < 'a') || (mass[i] > 'z')))
 		{
 			mass[i] = '\0';
 			uknaslo[che] = &mass[i + 1];

@@ -13,9 +13,11 @@ void perevorotword(char* b)
 		printf("%c", b[i]);
 	}
 	printf("\n");
+	
 }
 int main()
 {
+	printf("Input number:");
 	char mass[100];
 	gets_s(mass);
 	char* uknaslo[100];
@@ -24,21 +26,20 @@ int main()
 	che++;
 	for (int i = 0; mass[i] != '\0'; i++)
 	{
-		if (mass[i] == ' ') 
+		if (((mass[i] < 'A') || (mass[i] > 'Z')) && ((mass[i] < 'a') || (mass[i] > 'z')))
 		{
 			mass[i] = '\0';
 			uknaslo[che] = &mass[i + 1];
 			che++;
 		}
 	}
-	printf(" che=%d \n ", che);
+	printf("che=%d \n", che);
 	for (int i = 0; i < che; i++)
 	{
-		printf(" %s \n ", uknaslo[i]);
-		if (uknaslo[i][0] != '\0')
+		//printf("%s \n", uknaslo[i]);
+		if (uknaslo[i][0] != '\0') 
 		{
 			perevorotword(uknaslo[i]);
-			printf("\n");
 		}
 	}
 }

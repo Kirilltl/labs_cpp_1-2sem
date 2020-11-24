@@ -48,7 +48,6 @@ int main()
 			che++;
 		}
 	}
-	printf("che=%d \n", che);
 	qsort(uknaslo, che);
 	for (int i = 0; i < che; i++)
 	{

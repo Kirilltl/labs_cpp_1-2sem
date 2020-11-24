@@ -13,11 +13,10 @@ void perevorotword(char* b)
 		printf("%c", b[i]);
 	}
 	printf("\n");
-	
 }
 int main()
 {
-	printf("Input number:");
+	printf("Input string:");
 	char mass[100];
 	gets_s(mass);
 	char* uknaslo[100];
@@ -33,12 +32,11 @@ int main()
 			che++;
 		}
 	}
-	printf("che=%d \n", che);
 	for (int i = 0; i < che; i++)
 	{
-		//printf("%s \n", uknaslo[i]);
 		if (uknaslo[i][0] != '\0') 
 		{
+			printf("This is an inverted word:");
 			perevorotword(uknaslo[i]);
 		}
 	}

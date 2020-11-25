@@ -41,7 +41,6 @@ int main()
 	che++;
 	for (int i = 0; mass[i] != '\0'; i++)
 	{
-		
 		if((mass[i] > 0 && mass[i] < 'A') || (mass[i] > 'Z' && mass[i] < 'a') || (mass[i] > 'z' && mass[i] < 255))
 		{
 			mass[i] = '\0';

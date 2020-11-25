@@ -32,7 +32,7 @@ void qsort(char* uknaslo[], int che)
 }
 int main()
 {
-	printf("Input number:");
+	printf("Input string:");
 	char mass[100];
 	gets_s(mass);
 	char* uknaslo[100];
@@ -41,13 +41,15 @@ int main()
 	che++;
 	for (int i = 0; mass[i] != '\0'; i++)
 	{
-		if(((mass[i] < 'A') || (mass[i] > 'Z')) && ((mass[i] < 'a') || (mass[i] > 'z')))
+		
+		if((mass[i] > 0 && mass[i] < 'A') || (mass[i] > 'Z' && mass[i] < 'a') || (mass[i] > 'z' && mass[i] < 255))
 		{
 			mass[i] = '\0';
 			uknaslo[che] = &mass[i + 1];
 			che++;
 		}
 	}
+	printf("This is an alphabetical order: \n");
 	qsort(uknaslo, che);
 	for (int i = 0; i < che; i++)
 	{

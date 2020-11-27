@@ -13,7 +13,7 @@ int comparesl(char* s1, char* s2)
 		*s2++;
 	}
 }
-void qsort(char* uknaslo[], int che)
+void bubblesort(char* uknaslo[], int che)
 {
 	for (int j = 0; j < (che - 1); j++)
 	{
@@ -41,7 +41,7 @@ int main()
 	che++;
 	for (int i = 0; mass[i] != '\0'; i++)
 	{
-		if((mass[i] > 0 && mass[i] < 'A') || (mass[i] > 'Z' && mass[i] < 'a') || (mass[i] > 'z' && mass[i] < 255))
+	if((mass[i] > 0 && mass[i] < 'A') || (mass[i] > 'Z' && mass[i] < 'a') || (mass[i] > 'z' && mass[i] < 255))//условие функцией
 		{
 			mass[i] = '\0';
 			uknaslo[che] = &mass[i + 1];
@@ -49,7 +49,7 @@ int main()
 		}
 	}
 	printf("This is an alphabetical order: \n");
-	qsort(uknaslo, che);
+	bubblesort(uknaslo, che);
 	for (int i = 0; i < che; i++)
 	{
 		if (uknaslo[i][0] != '\0')

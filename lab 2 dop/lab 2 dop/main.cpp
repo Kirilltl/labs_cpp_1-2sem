@@ -30,6 +30,16 @@ void bubblesort(char* uknaslo[], int che)
 		}
 	}
 }
+int isalpha(char ch) {
+	if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
 int main()
 {
 	printf("Input string:");
@@ -41,7 +51,7 @@ int main()
 	che++;
 	for (int i = 0; mass[i] != '\0'; i++)
 	{
-	if((mass[i] > 0 && mass[i] < 'A') || (mass[i] > 'Z' && mass[i] < 'a') || (mass[i] > 'z' && mass[i] < 255))//условие функцией
+		if (isalpha(mass[i]) == 0)
 		{
 			mass[i] = '\0';
 			uknaslo[che] = &mass[i + 1];
@@ -57,4 +67,4 @@ int main()
 	}
 }
 
-
+//if ((mass[i] > 0 && mass[i] < 'A') || (mass[i] > 'Z' && mass[i] < 'a') || (mass[i] > 'z' && mass[i] < 255))//условие функцией

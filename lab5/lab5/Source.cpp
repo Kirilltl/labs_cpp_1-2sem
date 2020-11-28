@@ -31,7 +31,7 @@ int main()
 	
 	
 	int maxlen = 0;
-	char* temp = 0;
+	char* maxword = 0;
 	for (int i = 0; i < che; i++)
 	{
 		int len = lengthword(uknaslo[i]);
@@ -39,13 +39,19 @@ int main()
 		if (len > maxlen)
 		{
 			maxlen = len;
-			temp = uknaslo[i];
+			maxword = uknaslo[i];
 		}
 		
-		printf("%s - %d \n", uknaslo[i],lengthword(uknaslo[i]));
+	//	printf("%s - %d \n", uknaslo[i],lengthword(uknaslo[i]));
 	
 	}
 
-	printf("%s", temp);
-
+	for (int i = 0; i < che; i++)
+	{
+		if (uknaslo[i] != maxword)
+			printf("%s ", uknaslo[i]);
+		else
+			printf("%s ", word);
+	}
+	printf("\n");
 }

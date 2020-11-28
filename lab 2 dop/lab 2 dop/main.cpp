@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 int comparesl(char* s1, char* s2)
 {
 	while (1)
@@ -45,26 +46,89 @@ int main()
 	printf("Input string:");
 	char mass[100];
 	gets_s(mass);
-	char* uknaslo[100];
+
+	//char* uknaslo[100];
 	int che = 0;
-	uknaslo[0] = &mass[0];
-	che++;
-	for (int i = 0; mass[i] != '\0'; i++)
+
+	// Вычисляем количество слов
+	int ignor = 0;
+	for (int i = 0;; i++)
 	{
-		if (isalpha(mass[i]) == 0)
+		if (mass[i] == '\0')
 		{
-			mass[i] = '\0';
-			uknaslo[che] = &mass[i + 1];
+			break;
+		}
+
+		if (isalpha(mass[i]) == 1 && ignor == 0)
+		{
 			che++;
+			ignor = 1;
+		}
+
+		if (mass[i] == ' ' || isalpha(mass[i]) == 0)
+		{
+			ignor = 0;
 		}
 	}
+
+	// Что имено копировать в дин. память?
+	// указатели или сами слова?
+
+/*
+
+	// Выделяем память (она пока пустая)
+	printf("che %d\n ", che);
+	char** uknaslo = (char**)malloc(che * sizeof(char*));
+
+	for (int i = 0; i < 100; i++)
+	{
+		printf("<%c> ", mass[i]);
+	}
+
+	// помещаем казатели в динамичскую память
+	ignor = 0;
+	int counter = 0; // для динамич. памяти
+	for (int i = 0;; i++)
+	{
+		if (mass[i] == '\0')
+		{
+			break;
+		}
+
+		if (isalpha(mass[i]) == 1 && ignor == 0)
+		{
+			uknaslo[counter] = &mass[i];
+			ignor = 1;
+		}
+
+		if (mass[i] == ' ' || isalpha(mass[i]) == 0)
+		{
+			ignor = 0;
+		}
+	}
+
+	for (int i = 0; i < 100; i++)
+	{
+		if (mass[i] == ' ' || isalpha(mass[i]) == 0)
+		{
+			mass[i] = '\0';
+		}
+	}
+
+
+	for (int i = 0; i < che; i++)
+	{
+		printf("%s \n", uknaslo[i]);
+	}
+*/
+	/*
+
 	printf("This is an alphabetical order: \n");
 	bubblesort(uknaslo, che);
 	for (int i = 0; i < che; i++)
 	{
 		if (uknaslo[i][0] != '\0')
 			printf("%s \n", uknaslo[i]);
-	}
+	}*/
 }
 
-//if ((mass[i] > 0 && mass[i] < 'A') || (mass[i] > 'Z' && mass[i] < 'a') || (mass[i] > 'z' && mass[i] < 255))//условие функцией

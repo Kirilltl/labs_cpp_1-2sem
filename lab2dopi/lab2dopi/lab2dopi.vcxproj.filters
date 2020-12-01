@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lab2dopi.cpp">
+    <ClCompile Include="lab2dopi.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

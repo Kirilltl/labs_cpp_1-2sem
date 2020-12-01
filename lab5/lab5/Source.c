@@ -1,4 +1,5 @@
 #include<stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
 int lengthword(char* a)
 {
 	int res = 0;
@@ -6,15 +7,12 @@ int lengthword(char* a)
 		res++;
 	return res;
 }
-
 int main()
 {
 	char mass[100];
-	gets_s(mass);
-
-	char word[100];
-	gets_s(word);
-
+	gets(mass);
+    char word[100];
+	gets(word);
 	char* uknaslo[100];
 	int che = 0;
 	uknaslo[0] = &mass[0];
@@ -28,8 +26,6 @@ int main()
 			che++;
 		}
 	}
-	
-	
 	int maxlen = 0;
 	char* maxword = 0;
 	for (int i = 0; i < che; i++)
@@ -41,11 +37,7 @@ int main()
 			maxlen = len;
 			maxword = uknaslo[i];
 		}
-		
-	//	printf("%s - %d \n", uknaslo[i],lengthword(uknaslo[i]));
-	
 	}
-
 	for (int i = 0; i < che; i++)
 	{
 		if (uknaslo[i] != maxword)

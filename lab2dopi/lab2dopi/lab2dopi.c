@@ -1,4 +1,5 @@
 #include<stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
 int comparesl(char* s1, char* s2)
 {
 	while (1)
@@ -45,7 +46,7 @@ int main()
 {
 	printf("Input string:");
 	char mass[100];
-	gets_s(mass);
+	gets(mass);
 	char* uknaslo[100];
 	int che = 0;
 	uknaslo[0] = &mass[0];

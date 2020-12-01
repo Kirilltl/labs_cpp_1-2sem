@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<string.h>
 int comparesl(char* s1, char* s2)
 {
 	while (1)

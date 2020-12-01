@@ -1,2 +1,4 @@
 ﻿  lab2dopi.cpp
-  lab2dopi.vcxproj -> C:\github\labs\lab2dopi\Debug\lab2dopi.exe
+C:\github\labs\lab2dopi\lab2dopi\lab2dopi.cpp(1,1): warning C4005: _CRT_SECURE_NO_WARNINGS: изменение макроопределения
+C:\github\labs\lab2dopi\lab2dopi\lab2dopi.cpp : message : см. предыдущее определение "_CRT_SECURE_NO_WARNINGS"
+C:\github\labs\lab2dopi\lab2dopi\lab2dopi.cpp(49,2): error C3861: gets: идентификатор не найден

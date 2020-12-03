@@ -1,5 +1,5 @@
 #include<stdio.h>
-#define _CRT_SECURE_NO_WARNINGS
+#include<stdlib.h>
 int lengthword(char* a)
 {
 	int res = 0;
@@ -7,41 +7,79 @@ int lengthword(char* a)
 		res++;
 	return res;
 }
-int main()
+int is_alpha(char ch) 
 {
-	char mass[100];
-	gets(mass);
-    char word[100];
-	gets(word);
-	char* uknaslo[100];
-	int che = 0;
-	uknaslo[0] = &mass[0];
-	che++;
-	for (int i = 0; mass[i] != '\0'; i++)
-	{
-		if ((mass[i] == ' ') || (mass[i] == '.') || (mass[i] == ','))
+	return ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'));
+}
+char* get_string(int* len) 
+{
+	*len = 0;
+	int capacity = 1;
+	char* str = (char*)malloc(sizeof(char));
+	char c = getchar();
+	while (c != '\n') {
+		str[(*len)++] = c;
+		if (*len >= capacity) 
 		{
-			mass[i] = '\0';
-			uknaslo[che] = &mass[i + 1];
-			che++;
+			capacity *= 2;
+			str = (char*)realloc(str, capacity * sizeof(char));
+		}
+		c = getchar();
+	}
+	str[*len] = '\0';
+	return str;
+}
+char** get_words(char* str, int* wc)
+{
+	*wc = 0;
+	int flag = 1;
+	int capacity = 1;
+	char** words = (char**)malloc(sizeof(char*));
+	for (int i = 0; str[i] != '\0'; i++)
+	{
+		if (is_alpha(str[i]) == 1 && flag)
+		{
+			words[*wc] = &str[i];
+			(*wc)++;
+			flag = 0;
+			if (*wc >= capacity) 
+			{
+				capacity *= 2;
+				words = (char**)realloc(words, capacity * sizeof(char*));
+			}
+		}
+		else if (is_alpha(str[i]) == 0)
+		{
+			str[i] = '\0';
+			flag = 1;
 		}
 	}
+	return words;
+}
+int main()
+{
+	printf("Input string:");
+	int neisp;
+	char* str = get_string(&neisp); 
+	int wc;
+	char** words = get_words(str, &wc); 
+	printf("Input word:");
+	char* word = get_string(&neisp); 
 	int maxlen = 0;
 	char* maxword = 0;
-	for (int i = 0; i < che; i++)
+	for (int i = 0; i < wc; i++)
 	{
-		int len = lengthword(uknaslo[i]);
-
+		int len = lengthword(words[i]);
 		if (len > maxlen)
 		{
 			maxlen = len;
-			maxword = uknaslo[i];
+			maxword = words[i];
 		}
 	}
-	for (int i = 0; i < che; i++)
+	for (int i = 0; i < wc; i++)
 	{
-		if (uknaslo[i] != maxword)
-			printf("%s ", uknaslo[i]);
+		if (words[i] != maxword)
+			printf("%s ", words[i]);
 		else
 			printf("%s ", word);
 	}

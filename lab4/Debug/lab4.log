@@ -1,2 +1,2 @@
-﻿  lab4.cpp
-C:\github\labs\lab4\lab4.cpp(32,2): error C3861: gets: идентификатор не найден
+﻿  lab4.c
+  lab4.vcxproj -> C:\github\labs\lab4\Debug\lab4.exe

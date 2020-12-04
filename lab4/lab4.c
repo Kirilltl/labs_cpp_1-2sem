@@ -53,7 +53,7 @@ char** get_words(char* str, int* wc)
             if (*wc >= capacity) 
             {
                 capacity *= 2;
-                words = (char**)realloc(words, capacity * sizeof(char*));
+                //words = (char**)realloc(words, capacity * sizeof(char*));
             }
         }
         else if (is_alpha(str[i]) == 0)

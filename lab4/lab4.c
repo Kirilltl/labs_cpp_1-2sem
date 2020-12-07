@@ -7,7 +7,7 @@ int lengthword(char* a)
 		res++;
 	return res;
 }
-void perevorotword(char* b)
+void twist_word(char* b)
 {
 	for (int i = lengthword(b) - 1; i >= 0; i--)
 	{
@@ -69,12 +69,11 @@ int main()
 	printf("Input string:");
     int len;
     char* str = get_string(&len);
-    printf("You wrote: '%s'\n", str); 
     int wc;
     char** words = get_words(str, &wc);
     for (int i = 0; i < wc; i++)
 	{
 		printf("This is an inverted word:");
-		perevorotword(words[i]);
+        twist_word(words[i]);
 	}
 }

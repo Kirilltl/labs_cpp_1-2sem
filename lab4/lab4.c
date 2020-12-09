@@ -9,11 +9,13 @@ int lengthword(char* a)
 }
 void twist_word(char* b)
 {
-	for (int i = lengthword(b) - 1; i >= 0; i--)
+    int len = lengthword(b);
+    for (int i = 0; i < len/2; i++)
 	{
-		printf("%c", b[i]);
+        char temp = b[i];
+        b[i] = b[len - 1 - i];
+        b[len - 1 - i] = temp;
 	}
-	printf("\n");
 }
 int is_alpha(char ch)
 {
@@ -53,7 +55,7 @@ char** get_words(char* str, int* wc)
             if (*wc >= capacity) 
             {
                 capacity *= 2;
-                //words = (char**)realloc(words, capacity * sizeof(char*));
+                words = (char**)realloc(words, capacity * sizeof(char*));
             }
         }
         else if (is_alpha(str[i]) == 0)
@@ -73,7 +75,7 @@ int main()
     char** words = get_words(str, &wc);
     for (int i = 0; i < wc; i++)
 	{
-		printf("This is an inverted word:");
-        twist_word(words[i]);
+		twist_word(words[i]);
+        printf("This is an inverted word: %s\n", words[i]);
 	}
 }

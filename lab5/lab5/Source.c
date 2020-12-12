@@ -67,6 +67,10 @@ int main()
 	char* word = get_string(&neisp); 
 	int maxlen = 0;
 	char* maxword = 0;
+	int temp;
+	printf("Input temp = 1/0: ");
+	scanf("%d \n", &temp);
+	printf("%d \n", &temp);
 	for (int i = 0; i < wc; i++)
 	{
 		int len = lengthword(words[i]);
@@ -84,4 +88,6 @@ int main()
 			printf("%s ", word);
 	}
 	printf("\n");
+	free(str);
+	free(words);
 }

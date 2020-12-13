@@ -67,22 +67,30 @@ int main()
 	char* word = get_string(&neisp); 
 	int maxlen = 0;
 	char* maxword = 0;
+	int minlen = 0;
+	char* minword = 0;
 	int temp;
-	printf("Input temp = 1/0: ");
-	scanf("%d \n", &temp);
-	printf("%d \n", &temp);
+	printf("Input temp(0 - change min or 1 - change max):");
+	scanf_s("%d",&temp);
+	//printf("%d \n",temp);
 	for (int i = 0; i < wc; i++)
 	{
 		int len = lengthword(words[i]);
-		if (len > maxlen)
+		//if (len > maxlen)
+		if(temp == 1)
 		{
-			maxlen = len;
-			maxword = words[i];
+			int maxlen = 0;
+			char* maxword = 0;
+		}
+		if (temp == 0)
+		{
+			minlen = len;
+			minword = words[i];
 		}
 	}
 	for (int i = 0; i < wc; i++)
 	{
-		if (words[i] != maxword)
+		if (words[i] != maxword || words[i] != minword)
 			printf("%s ", words[i]);
 		else
 			printf("%s ", word);

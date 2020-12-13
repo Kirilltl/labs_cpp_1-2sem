@@ -1,2 +1,0 @@
-C:\github\labs\lab4\Debug\lab4.exe
-C:\github\labs\lab4\Debug\lab4.pdb

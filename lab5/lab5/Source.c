@@ -6,9 +6,7 @@ int lengthword(char* a)
 	int res = 0;
 	for (int i = 0; a[i] != '\0'; i++)
 		res++;
-	
 	return res;
-
 }
 int is_alpha(char ch) 
 {
@@ -76,17 +74,12 @@ int main()
 	char** words = get_words(str, &wc); 
 	printf("Input word:");
 	char* word = get_string(&neisp); 
-
 	int maxlen = 0;
 	int minlen = INT_MAX;
-
 	char* changeword = 0;
-
 	int temp;
 	printf("Input temp(0 - change min or 1 - change max):");
-	scanf_s("%d",&temp);
-	
-
+	scanf("%d",&temp);
 	if (temp == 1)
 	{
 		for (int i = 0; i < wc; i++)
@@ -112,10 +105,9 @@ int main()
 		}
 	}
 	else {
-		printf("oshibka\n");
+		printf("YOU CAN'T ENTER THESE SYMBOLS!!! \n");
 		return;
 	}
-
 	for (int i = 0; i < wc; i++)
 	{
 		if (words[i] != changeword)
@@ -123,9 +115,6 @@ int main()
 		else
 			printf("%s ", word);
 	}
-
-	printf("\n");
-	printf("\n");
 	free(str);
 	free(words);
 	free(word);

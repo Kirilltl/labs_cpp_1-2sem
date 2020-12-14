@@ -26,8 +26,6 @@ char* get_string(int* len)
     *len = 0;
     int capacity = 1;
     char* str = (char*)malloc(sizeof(char));
-
-
     char c = getchar();
     while (c != '\n') {
         str[(*len)++] = c;
@@ -43,7 +41,6 @@ char* get_string(int* len)
         c = getchar();
     }
     str[*len] = '\0';
-    
     return str;
 }
 char** get_words(char* str, int* wc)

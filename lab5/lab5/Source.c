@@ -1,11 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<limits.h>
 int lengthword(char* a)
 {
 	int res = 0;
 	for (int i = 0; a[i] != '\0'; i++)
 		res++;
+	
 	return res;
+
 }
 int is_alpha(char ch) 
 {
@@ -67,35 +70,55 @@ int main()
 	char* word = get_string(&neisp); 
 	int maxlen = 0;
 	char* maxword = 0;
-	int minlen = 0;
+	int minlen = INT_MAX;
 	char* minword = 0;
 	int temp;
 	printf("Input temp(0 - change min or 1 - change max):");
 	scanf_s("%d",&temp);
-	//printf("%d \n",temp);
-	for (int i = 0; i < wc; i++)
+	
+
+	if (temp == 1) 
 	{
-		int len = lengthword(words[i]);
-		//if (len > maxlen)
-		if(temp == 1)
+		for (int i = 0; i < wc; i++)
 		{
-			int maxlen = 0;
-			char* maxword = 0;
+			int len = lengthword(words[i]);
+			if (len > maxlen)
+			{
+				maxlen = len;
+				maxword = words[i];
+			}
 		}
-		if (temp == 0)
+		for (int i = 0; i < wc; i++)
 		{
-			minlen = len;
-			minword = words[i];
+			if (words[i] != maxword)
+				printf("%s ", words[i]);
+			else
+				printf("%s ", word);
 		}
 	}
-	for (int i = 0; i < wc; i++)
+	else if (temp == 0)
 	{
-		if (words[i] != maxword || words[i] != minword)
-			printf("%s ", words[i]);
-		else
-			printf("%s ", word);
+		for (int i = 0; i < wc; i++)
+		{
+			int len = lengthword(words[i]);
+			if (len < minlen)
+			{
+				minlen = len;
+				minword = words[i];
+			}
+		}
+		for (int i = 0; i < wc; i++)
+		{
+			if (words[i] != minword)
+				printf("%s ", words[i]);
+			else
+				printf("%s ", word);
+		}
 	}
+
+	printf("\n");
 	printf("\n");
 	free(str);
 	free(words);
+	free(word);
 }

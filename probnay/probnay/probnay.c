@@ -26,17 +26,24 @@ char* get_string(int* len)
     *len = 0;
     int capacity = 1;
     char* str = (char*)malloc(sizeof(char));
+
+
     char c = getchar();
     while (c != '\n') {
         str[(*len)++] = c;
         if (*len >= capacity)
         {
             capacity *= 2;
-            str = (char*)realloc(str, capacity * sizeof(char));
+            char* t = (char*)realloc(str, capacity * sizeof(char));
+            if (t != NULL)
+            {
+                str = t;
+            }
         }
         c = getchar();
     }
     str[*len] = '\0';
+    
     return str;
 }
 char** get_words(char* str, int* wc)
@@ -55,7 +62,11 @@ char** get_words(char* str, int* wc)
             if (*wc >= capacity)
             {
                 capacity *= 2;
-                words = (char**)realloc(words, capacity * sizeof(char*));
+                char** t = (char**)realloc(words, capacity * sizeof(char*));
+                if (t != NULL)
+                {
+                    words = t;
+                }
             }
         }
         else if (is_alpha(str[i]) == 0)
@@ -78,4 +89,6 @@ int main()
         twist_word(words[i]);
         printf("This is an inverted word: %s\n", words[i]);
     }
+    free(str);
+    free(words);
 }

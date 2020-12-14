@@ -25,7 +25,11 @@ char* get_string(int* len)
 		if (*len >= capacity) 
 		{
 			capacity *= 2;
-			str = (char*)realloc(str, capacity * sizeof(char));
+			char* t = (char*)realloc(str, capacity * sizeof(char));
+			if (t != NULL)
+			{
+				str = t;
+			}
 		}
 		c = getchar();
 	}
@@ -48,7 +52,11 @@ char** get_words(char* str, int* wc)
 			if (*wc >= capacity) 
 			{
 				capacity *= 2;
-				words = (char**)realloc(words, capacity * sizeof(char*));
+				char** t = (char**)realloc(words, capacity * sizeof(char*));
+				if (t != NULL)
+				{
+					words = t;
+				}
 			}
 		}
 		else if (is_alpha(str[i]) == 0)
@@ -68,16 +76,18 @@ int main()
 	char** words = get_words(str, &wc); 
 	printf("Input word:");
 	char* word = get_string(&neisp); 
+
 	int maxlen = 0;
-	char* maxword = 0;
 	int minlen = INT_MAX;
-	char* minword = 0;
+
+	char* changeword = 0;
+
 	int temp;
 	printf("Input temp(0 - change min or 1 - change max):");
 	scanf_s("%d",&temp);
 	
 
-	if (temp == 1) 
+	if (temp == 1)
 	{
 		for (int i = 0; i < wc; i++)
 		{
@@ -85,15 +95,8 @@ int main()
 			if (len > maxlen)
 			{
 				maxlen = len;
-				maxword = words[i];
+				changeword = words[i];
 			}
-		}
-		for (int i = 0; i < wc; i++)
-		{
-			if (words[i] != maxword)
-				printf("%s ", words[i]);
-			else
-				printf("%s ", word);
 		}
 	}
 	else if (temp == 0)
@@ -104,16 +107,21 @@ int main()
 			if (len < minlen)
 			{
 				minlen = len;
-				minword = words[i];
+				changeword = words[i];
 			}
 		}
-		for (int i = 0; i < wc; i++)
-		{
-			if (words[i] != minword)
-				printf("%s ", words[i]);
-			else
-				printf("%s ", word);
-		}
+	}
+	else {
+		printf("oshibka\n");
+		return;
+	}
+
+	for (int i = 0; i < wc; i++)
+	{
+		if (words[i] != changeword)
+			printf("%s ", words[i]);
+		else
+			printf("%s ", word);
 	}
 
 	printf("\n");

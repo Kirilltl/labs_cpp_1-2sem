@@ -53,7 +53,11 @@ char** get_words(char* str, int* wc)
     *wc = 0;
     int flag = 1;
     int capacity = 1;
-    char** words = (char**)malloc(sizeof(char*));
+    char* old;
+    //char** words = (char**)malloc(sizeof(char*));
+    char** words;
+    if ((words = (char**)malloc(sizeof(char))) == NULL)
+        exit(1);
     for (int i = 0; str[i] != '\0'; i++)
     {
         if (is_alpha(str[i]) == 1 && flag)
@@ -64,7 +68,13 @@ char** get_words(char* str, int* wc)
             if (*wc >= capacity)
             {
                 capacity *= 2;
-                char** str = (char**)realloc(words, capacity * sizeof(char*));
+                old = str;
+                //char** str = (char**)realloc(words, capacity * sizeof(char*));
+                if ((str = (char**)realloc(words, capacity * sizeof(char*))) == NULL)
+                {
+                    free(old);
+                    exit(1);
+                }
             }
         }
         else if (is_alpha(str[i]) == 0)

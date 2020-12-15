@@ -25,17 +25,22 @@ char* get_string(int* len)
 {
     *len = 0;
     int capacity = 1;
+    char* old;
     char* str;
-    if ((str = (char*)malloc(sizeof(char)))==NULL)exit(1);
+    if ((str = (char*)malloc(sizeof(char)))==NULL)
+        exit(1);
     char c = getchar();
     while (c != '\n') {
         str[(*len)++] = c;
         if (*len >= capacity)
         {
             capacity *= 2;
+            old = str;
             if ((str = (char*)realloc(str, capacity * sizeof(char))) == NULL)
-                free(str);
+            {
+                free(old);
                 exit(1);
+            }
         }
         c = getchar();
     }
@@ -59,7 +64,7 @@ char** get_words(char* str, int* wc)
             if (*wc >= capacity)
             {
                 capacity *= 2;
-                char** t = (char**)realloc(words, capacity * sizeof(char*));
+                char** str = (char**)realloc(words, capacity * sizeof(char*));
             }
         }
         else if (is_alpha(str[i]) == 0)

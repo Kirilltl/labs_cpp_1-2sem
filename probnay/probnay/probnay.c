@@ -38,10 +38,10 @@ char* get_string(int* len)
         if (*len >= capacity)
         {
             capacity *= 2;
-            char* t =(char*)realloc(str, capacity * sizeof(char));
-            if (t != NULL)
+            char* temp = (char*)realloc(str, capacity * sizeof(char));
+            if (temp != NULL)
             {
-                str = t;
+                str = temp;
             }
             else
             {
@@ -66,7 +66,7 @@ char** get_words(char* str, int* wc)
         free(words);
         exit(1);
     }
-for (int i = 0; str[i] != '\0'; i++)
+    for (int i = 0; str[i] != '\0'; i++)
     {
         if (is_alpha(str[i]) == 1 && flag)
         {
@@ -74,12 +74,12 @@ for (int i = 0; str[i] != '\0'; i++)
             (*wc)++;
             flag = 0;
             if (*wc >= capacity)
-               {
+            {
                 capacity *= 2;
-                char** t = (char**)realloc(words, capacity * sizeof(char*));
-                if (t != NULL)
+                char** temp = (char**)realloc(words, capacity * sizeof(char*));
+                if (temp != NULL)
                 {
-                    words = t;
+                    words = temp;
                 }
                 else
                 {
@@ -87,7 +87,7 @@ for (int i = 0; str[i] != '\0'; i++)
                     free(words);
                     exit(1);
                 }
-               }
+            }
         }
         else if (is_alpha(str[i]) == 0)
         {

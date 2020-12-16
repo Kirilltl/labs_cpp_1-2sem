@@ -17,16 +17,26 @@ char* get_string(int* len)
 	*len = 0;
 	int capacity = 1;
 	char* str = (char*)malloc(sizeof(char));
+	if (str == NULL)
+	{
+		free(str);
+		exit(1);
+	}
 	char c = getchar();
 	while (c != '\n') {
 		str[(*len)++] = c;
 		if (*len >= capacity) 
 		{
 			capacity *= 2;
-			char* t = (char*)realloc(str, capacity * sizeof(char));
-			if (t != NULL)
+			char* temp = (char*)realloc(str, capacity * sizeof(char));
+			if (temp != NULL)
 			{
-				str = t;
+				str = temp;
+			}
+			else
+			{
+				free(str);
+				exit(1);
 			}
 		}
 		c = getchar();
@@ -40,6 +50,12 @@ char** get_words(char* str, int* wc)
 	int flag = 1;
 	int capacity = 1;
 	char** words = (char**)malloc(sizeof(char*));
+	if (words == NULL)
+	{
+		free(str);
+		free(words);
+		exit(1);
+	}
 	for (int i = 0; str[i] != '\0'; i++)
 	{
 		if (is_alpha(str[i]) == 1 && flag)
@@ -50,10 +66,16 @@ char** get_words(char* str, int* wc)
 			if (*wc >= capacity) 
 			{
 				capacity *= 2;
-				char** t = (char**)realloc(words, capacity * sizeof(char*));
-				if (t != NULL)
+				char** temp = (char**)realloc(words, capacity * sizeof(char*));
+				if (temp != NULL)
 				{
-					words = t;
+					words = temp;
+				}
+				else
+				{
+					free(str);
+					free(words);
+					exit(1);
 				}
 			}
 		}
@@ -79,7 +101,7 @@ int main()
 	char* changeword = 0;
 	int temp;
 	printf("Input temp(0 - change min or 1 - change max):");
-	scanf("%d",&temp);
+	scanf("%d", &temp);
 	if (temp == 1)
 	{
 		for (int i = 0; i < wc; i++)

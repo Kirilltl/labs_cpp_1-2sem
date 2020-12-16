@@ -25,26 +25,18 @@ char* get_string(int* len)
 {
     *len = 0;
     int capacity = 1;
-    char* old;
-    char* str;
-    if ((str = (char*)malloc(sizeof(char)))==NULL)
-        exit(1);
+    char* str = (char*)malloc(sizeof(char));
     char c = getchar();
-    while (c != '\n') {
+    while (c != '\n') 
+    {
         str[(*len)++] = c;
         if (*len >= capacity)
         {
             capacity *= 2;
-            old = str;
-            if ((str = (char*)realloc(str, capacity * sizeof(char))) == NULL)
-            {
-                free(old);
-                exit(1);
-            }
+            str=(char*)realloc(str, capacity * sizeof(char));
         }
         c = getchar();
     }
-    if (str != NULL)
     str[*len] = '\0';
     return str;
 }
@@ -53,29 +45,19 @@ char** get_words(char* str, int* wc)
     *wc = 0;
     int flag = 1;
     int capacity = 1;
-    char* old;
-    //char** words = (char**)malloc(sizeof(char*));
-    char** words;
-    if ((words = (char**)malloc(sizeof(char))) == NULL)
-        exit(1);
-    for (int i = 0; str[i] != '\0'; i++)
+    char** words = (char**)malloc(sizeof(char*));
+    for (int i = 0;str[i] != '\0'; i++)
     {
         if (is_alpha(str[i]) == 1 && flag)
         {
             words[*wc] = &str[i];
             (*wc)++;
             flag = 0;
-            if (*wc >= capacity)
-            {
-                capacity *= 2;
-                old = str;
-                //char** str = (char**)realloc(words, capacity * sizeof(char*));
-                if ((str = (char**)realloc(words, capacity * sizeof(char*))) == NULL)
+                if (*wc >= capacity)
                 {
-                    free(old);
-                    exit(1);
+                    capacity *= 2;
+                    str = (char**)realloc(words, capacity * sizeof(char*));
                 }
-            }
         }
         else if (is_alpha(str[i]) == 0)
         {
@@ -99,6 +81,5 @@ int main()
     }
     free(str);
     free(words);
-    exit(0);
     return 0;
 }

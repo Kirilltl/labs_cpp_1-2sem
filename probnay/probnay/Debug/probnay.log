@@ -1,3 +1,3 @@
 ﻿  probnay.c
-C:\github\labs\probnay\probnay\probnay.c(73,76): warning C4047: =: "char *" отличается по уровням косвенного обращения от "char **"
+C:\github\labs\probnay\probnay\probnay.c(59,75): warning C4047: =: "char *" отличается по уровням косвенного обращения от "char **"
   probnay.vcxproj -> C:\github\labs\probnay\Debug\probnay.exe

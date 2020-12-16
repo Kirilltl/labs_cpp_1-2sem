@@ -26,6 +26,11 @@ char* get_string(int* len)
     *len = 0;
     int capacity = 1;
     char* str = (char*)malloc(sizeof(char));
+    if (str == NULL)
+    {
+        free(str);
+        exit(1);
+    }
     char c = getchar();
     while (c != '\n') 
     {
@@ -41,7 +46,6 @@ char* get_string(int* len)
             else
             {
                 free(str);
-                //free(words);
                 exit(1);
             }
         }
@@ -56,7 +60,13 @@ char** get_words(char* str, int* wc)
     int flag = 1;
     int capacity = 1;
     char** words = (char**)malloc(sizeof(char*));
-    for (int i = 0; str[i] != '\0'; i++)
+    if (words == NULL)
+    {
+        free(str);
+        free(words);
+        exit(1);
+    }
+for (int i = 0; str[i] != '\0'; i++)
     {
         if (is_alpha(str[i]) == 1 && flag)
         {

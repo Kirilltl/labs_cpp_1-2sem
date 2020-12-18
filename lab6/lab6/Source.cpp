@@ -1,17 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-int is_alpha(char ch) {
-    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
+int is_alpha(char ch)
+{
+    return ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'));
 }
-
 int comparesl(char* s1, char* s2)
 {
     while (1)
@@ -26,29 +18,19 @@ int comparesl(char* s1, char* s2)
         *s2++;
     }
 }
-
-// Узел односвязного списка
 struct Node
 {
-    char* word;  // указатель на слово, прочитанное из файла
-    Node* next;  // указатель на следующий узел
+    char* word;  
+    Node* next;  
 };
-
-
-// Список
 struct List
 {
-    int id;      // ID списка (нужно только для вывода на экран)
-    Node* start; // указатель на первый узел 
-    Node* end;   // указатель на последний узел 
+    int id;      
+    Node* start; 
+    Node* end;   
 };
-
-
-
-// Вставка узла "node" в упорядоченный односвязный список. 
 void insert(List* list, Node* node)
 {
-    // если список пуст:
     if (!list->end)
     {
         node->next = NULL;
@@ -56,38 +38,27 @@ void insert(List* list, Node* node)
         list->start = node;
         return;
     }
-
-    // если список не пуст, то надо пробежаться в цикле по всем узлам:
-    Node* prev = NULL;     //  предыдущий узел
-    Node* n = list->start; //  текущий узел 
+    Node* prev = NULL;     
+    Node* n = list->start; 
     while (n != NULL)
     {
-        // если узел "node" надо вставлять ПОСЛЕ узла "n",
-    // то просто переходим к следующей итерации:
         if (comparesl(n->word, node->word) < 0)
         {
             prev = n;
             n = n->next;
         }
-
-        // если узел "node" надо вставлять ПЕРЕД узлом "n",
-    // то выполняем вставку и выходим из функции:
         else
         {
-            if (prev != NULL) { // случай вставки в середину списка
+            if (prev != NULL) { 
                 prev->next = node;
                 node->next = n;
                 return;
             }
-            node->next = n; // случай вставки в начало списка
+            node->next = n; 
             list->start = node;
             return;
         }
     }
-
-    // вставка в конец списка
-    // (сюда мы можем прийти, только если оказалось, что на КАЖДОЙ итерации
-    // узел "node" надо было вставлять ПОСЛЕ узла "n"):
     list->end->next = node;
     node->next = NULL;
     list->end = node;

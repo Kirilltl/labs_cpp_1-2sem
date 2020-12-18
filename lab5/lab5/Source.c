@@ -97,11 +97,16 @@ int main()
 	printf("Input word:");
 	char* word = get_string(&neisp); 
 	int maxlen = 0;
-	int minlen = INT_MAX;
+	int minlen = INT_MAX;//(2147483648)
 	char* changeword = 0;
 	int temp;
 	printf("Input temp(0 - change min or 1 - change max):");
-	scanf("%d", &temp);
+	int fake = scanf("%d", &temp);
+	if(fake != 1)	
+	{
+		free(temp);
+		exit (1);
+	}
 	if (temp == 1)
 	{
 		for (int i = 0; i < wc; i++)
@@ -126,7 +131,8 @@ int main()
 			}
 		}
 	}
-	else {
+	else 
+	{
 		printf("YOU CAN'T ENTER THESE SYMBOLS!!! \n");
 		return;
 	}

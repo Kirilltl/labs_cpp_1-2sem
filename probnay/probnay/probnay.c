@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-int lengthword(char* a)
+int length_word(char* a)
 {
     int res = 0;
     for (int i = 0; a[i] != '\0'; i++)
@@ -9,7 +9,7 @@ int lengthword(char* a)
 }
 void twist_word(char* b)
 {
-    int len = lengthword(b);
+    int len = length_word(b);
     for (int i = 0; i < len / 2; i++)
     {
         char temp = b[i];

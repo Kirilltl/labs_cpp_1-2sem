@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<limits.h>
 int length_word(char* a)
 {
 	int res = 0;
@@ -96,12 +97,13 @@ int main()
 	printf("Input word:");
 	char* word = get_string(&neisp); 
 	int maxlen = 0;
-	int minlen = 2147483648;
+	//int minlen = INT_MAX;
+	int minlen = 2147483647;
 	char* changeword = 0;
 	int temp;
 	printf("Input temp(0 - change min or 1 - change max):");
 	int fake = scanf("%d", &temp);
-	if(fake != 1)	
+	if(fake == 0)	
 	{
 		free(words);
 		free(str);

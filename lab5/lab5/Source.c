@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<limits.h>
+//#include<limits.h>
 int length_word(char* a)
 {
 	int res = 0;

@@ -146,6 +146,7 @@ int main()
 		else
 			printf("%s ", word);
 	}
+	printf("\n");
 	free(str);
 	free(words);
 	free(word);

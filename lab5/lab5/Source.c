@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define MIN_LEN 1000
-//#include<limits.h>
+#define LIMIT 1000
 int length_word(char* a)
 {
 	int res = 0;
@@ -98,12 +97,11 @@ int main()
 	printf("Input word:");
 	char* word = get_string(&neisp); 
 	int maxlen = 0;
-	//int minlen = INT_MAX;2147483647
-	int minlen = 1000;
+	int minlen = LIMIT;
 	for (int i = 0; i < wc; i++)
 	{
 		int len = length_word(words[i]);
-		if (len > 1000)
+		if (len > LIMIT)
 		{
 			printf("You can only enter words that have a maximum length of 1000 \n");
 			free(words);
@@ -114,7 +112,7 @@ int main()
 	}
 	char* changeword = 0;
 	int temp;
-	printf("Input temp(0 - change min or 1 - change max):");
+	printf("Input temp(it's a number): 0(change min) or 1(change max) -> ");
 	int fake = scanf("%d", &temp);
 	if(fake == 0)	
 	{

@@ -9,7 +9,5 @@ int main()
 	printf("Input c: ");
 	scanf("%d",  &c);
 	printf(" Result: %d - %d = %d \n", c, a, c - a);
-
 	return  0;
-
 }

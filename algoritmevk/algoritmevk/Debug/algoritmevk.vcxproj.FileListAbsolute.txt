@@ -1,0 +1,2 @@
+C:\github\labs\algoritmevk\algoritmevk\Debug\algoritmevk.exe
+C:\github\labs\algoritmevk\algoritmevk\Debug\algoritmevk.pdb

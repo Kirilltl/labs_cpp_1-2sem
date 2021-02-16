@@ -1,2 +1,0 @@
-C:\github\labs\lab 1(new)\lab 1(new)\Debug\lab 1(new).exe
-C:\github\labs\lab 1(new)\lab 1(new)\Debug\lab 1(new).pdb

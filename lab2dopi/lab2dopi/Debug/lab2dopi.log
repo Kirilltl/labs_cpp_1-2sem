@@ -1,3 +1,0 @@
-﻿  lab2dopi.c
-C:\github\labs\lab2dopi\lab2dopi\lab2dopi.c(49,6): warning C4013: gets: нет определения; предполагается "extern" с возвратом типа "int"
-  lab2dopi.vcxproj -> C:\github\labs\lab2dopi\Debug\lab2dopi.exe

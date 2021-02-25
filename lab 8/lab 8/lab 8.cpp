@@ -1,15 +1,15 @@
 ﻿#include<stdio.h>
+#include <stdlib.h>
 struct Numb
 {
 	float p;
 	Numb* next;
 };
 int main() {
-
 	Numb* n1 = (Numb*)malloc(sizeof(Numb));
 	n1->p = 1;
 
-	Numb* n2 = (Numb*)malloc(sizeof(Numb));
+	Numb*n2 = (Numb*)malloc(sizeof(Numb));
 	n2->p = 2;
 	n1->next = n2;
 
@@ -20,7 +20,8 @@ int main() {
 		float a = p[i] - p[i - 1];
 		float b = p[i] - p[i + 1];
 		float c = a + b;
-		if (c > max) {
+		if (c > max) 
+		{
 			max = c;
 		}
 	

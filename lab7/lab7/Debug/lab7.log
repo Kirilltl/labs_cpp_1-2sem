@@ -1,5 +1,2 @@
 ﻿  func.cpp
-  lab7.cpp
-C:\github\labs\lab7\lab7\lab7.cpp(7,5): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  Создание кода...
   lab7.vcxproj -> C:\github\labs\lab7\Debug\lab7.exe

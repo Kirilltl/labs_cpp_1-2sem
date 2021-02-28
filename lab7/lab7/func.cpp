@@ -1,6 +1,6 @@
 #include <stdio.h>
 #define Max 46341
-float check(float a, float b, float c)
+int check(double a, double b, double c)
 {
     if (a <= 0 || b <= 0 || c <= 0)
     {

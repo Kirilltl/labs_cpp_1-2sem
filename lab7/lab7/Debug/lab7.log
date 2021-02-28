@@ -1,2 +1,9 @@
-﻿  func.cpp
+﻿  lab7.cpp
+C:\github\labs\lab7\lab7\lab7.cpp(7,21): warning C4477: "scanf": в строке форматирования "%f" требуется аргумент типа "float *", но вариативный аргумент "1" имеет тип "double *"
+C:\github\labs\lab7\lab7\lab7.cpp(7,21): message : рекомендуется использовать "%lf" в строке форматирования
+C:\github\labs\lab7\lab7\lab7.cpp(7,21): warning C4477: "scanf": в строке форматирования "%f" требуется аргумент типа "float *", но вариативный аргумент "2" имеет тип "double *"
+C:\github\labs\lab7\lab7\lab7.cpp(7,21): message : рекомендуется использовать "%lf" в строке форматирования
+C:\github\labs\lab7\lab7\lab7.cpp(7,21): warning C4477: "scanf": в строке форматирования "%f" требуется аргумент типа "float *", но вариативный аргумент "3" имеет тип "double *"
+C:\github\labs\lab7\lab7\lab7.cpp(7,21): message : рекомендуется использовать "%lf" в строке форматирования
+C:\github\labs\lab7\lab7\lab7.cpp(7,15): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   lab7.vcxproj -> C:\github\labs\lab7\Debug\lab7.exe

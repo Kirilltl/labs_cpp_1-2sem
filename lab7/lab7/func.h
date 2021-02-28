@@ -1,4 +1,4 @@
 #ifndef _FUNC_H_
 #define _FUNC_H_
-float check(float a, float b, float c);
+int check(double a, double b, double c);
 #endif

@@ -1,2 +1,4 @@
 ﻿  lab 8.cpp
+C:\github\labs\lab 8\lab 8\lab 8.cpp(24,18): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\github\labs\lab 8\lab 8\lab 8.cpp(16,13): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   lab 8.vcxproj -> C:\github\labs\lab 8\Debug\lab 8.exe

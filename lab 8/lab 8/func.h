@@ -1,4 +1,9 @@
 #ifndef _FUNC_H_
 #define _FUNC_H_
-int check(double a, double b, double c);
+struct Answer 
+{
+	double max;
+	int index;
+};
+Answer return_response();
 #endif

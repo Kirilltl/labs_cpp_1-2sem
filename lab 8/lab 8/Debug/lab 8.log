@@ -1,5 +1,3 @@
 ﻿  function.cpp
-C:\github\labs\lab 8\lab 8\function.cpp(25,19): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\github\labs\lab 8\lab 8\function.cpp(17,14): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\github\labs\lab 8\lab 8\function.cpp(67): warning C4715: check: значение возвращается не при всех путях выполнения
+C:\github\labs\lab 8\lab 8\function.cpp(18,14): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   lab 8.vcxproj -> C:\github\labs\lab 8\Debug\lab 8.exe

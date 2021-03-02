@@ -43,16 +43,14 @@ int check(double a,double b,double c)
 			double c = a + b;
 			if (c > max)
 			{
+				return 1;
 				max = c;
 				index = i;
-				return 1;
 			}
 			if (current == last)
 				break;
 			current = current->next;
 		}
-		
-		
 		current = first;
 		for (;;)
 		{

@@ -52,7 +52,7 @@ Answer return_response()
 		Answer ans;
 		ans.max = 0.0;
 		ans.index = 0;
-		for (int i = 1;;i++) {
+		for (int i = 0;;i++) {
 			double a = current->num - current->prev->num;
 			double b = current->num - current->next->num;
 			double c = a + b;

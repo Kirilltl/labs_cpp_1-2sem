@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 int is_alpha(char ch)
-{
     return ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'));
-}
 int comparesl(char* s1, char* s2)
 {
     while (1)
@@ -112,7 +110,6 @@ List* create_list(const char* file, int id)
             }
             node->word[len] = '\0'; 
             len++;
-
             insert(list, node); 
             inserted = 1;       
             first_letter = 1;        
@@ -161,19 +158,15 @@ int main()
     List* one = create_list("C:\\github\\labs\\lab6\\Debug\\one.txt", 1);
     List* two = create_list("C:\\github\\labs\\lab6\\Debug\\two.txt", 2);
     List* three = create_list("C:\\github\\labs\\lab6\\Debug\\three.txt", 3);
-
     print_list(one);
     print_list(two);
     print_list(three);
-    
     merge(one, two);
     merge(one, three);
-
     printf("\n After merge:\n");
     print_list(one);
     print_list(two);
     print_list(three);
-
     printf("\n");
     delete_list(one);
     delete_list(two);

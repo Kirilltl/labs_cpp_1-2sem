@@ -98,6 +98,7 @@ List* create_list(const char* file, int id)
             { 
                 capacity *= 2;
                 node->word = (char*)realloc(node->word, capacity * sizeof(char));
+       
             }
             node->word[len] = c; 
             len++;

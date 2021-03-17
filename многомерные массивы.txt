@@ -1,0 +1,71 @@
+int M[3][3];
+M[i][j] = i * j;
+printf("M[%d][%d] == %d\n", i, j, M[i][j]);
+printf("\t%d", M[i][j]);
+
+
+char symbols[5][2];
+symbols [0][1] = 'A';
+
+
+#include <iostream>
+int main()
+{
+    // Объявляем массив 10x10 
+    const int numRows = 10;
+    const int numCols = 10;
+    int product[numRows][numCols] = { 0 };
+ // Создаем таблицу умножения
+    for (int row = 0; row < numRows; ++row)
+        for (int col = 0; col < numCols; ++col)
+            product[row][col] = row * col;
+ // Выводим таблицу умножения
+    for (int row = 1; row < numRows; ++row)
+    {
+        for (int col = 1; col < numCols; ++col)
+            std::cout << product[row][col] << "\t";
+ 	std::cout << '\n';
+    }
+ 	return 0;
+}
+
+
+#include <stdio.h>
+ int main()
+{
+  int i, j;
+  int myArray[8][8]; // объявляем массив размером 8*8 элементов
+ for ( i = 0; i < 8; i++ ) {
+    for ( j = 0; j < 8; j++ )
+      myArray[i][j] = i * j; // каждому элементу присваиваем значение произведения текущих индексов элемента массива
+  }
+ printf( "Вот такой массив у нас получился:\n" );
+  for ( i = 0; i < 8; i++ ) {
+    for ( j = 0; j < 8; j++ )
+    {
+        printf( "[%d][%d]=%d ", i, j, myArray[i][j] );
+    }
+    printf( "\n" );
+  }
+  getchar();
+}
+
+
+#include<iostream>
+using namespace std;
+int main()
+{
+// массив из 3 строк и 2 столбцов.
+int x[3][2] = {{0,1}, {2,3}, {4,5}};
+// выводим значение каждого элемента массива
+for (int i = 0; i < 3; i++)
+{
+for (int j = 0; j < 2; j++)
+{
+cout << "Element at x[" << i
+ << "][" << j << "]: ";
+ cout << x[i][j]<<endl;
+}
+}
+return 0;
+}

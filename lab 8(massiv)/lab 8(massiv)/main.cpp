@@ -1,8 +1,7 @@
 #include<stdio.h>
-//#include<stdlib.h>
 #include "func.h"
 int main()
 {
-	int index=ret();
-	printf("index, beginning with 0 :  %d \n", index);
+	int index = return_response();
+	printf("Index: %d \n", index);
 }

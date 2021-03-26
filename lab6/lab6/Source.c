@@ -98,7 +98,14 @@ List* create_list(const char* file, int id)
             if (len >= capacity)
             { 
                 capacity *= 2;
-                node->word = (char*)realloc(node->word, capacity * sizeof(char));
+                char *tmpp = (char*)realloc(node->word, capacity * sizeof(char));
+                if (tmpp == NULL) {
+                    free(node->word);
+                    return 1;
+                }
+                else {
+                    node->word = tmpp;
+                }
             }
             node->word[len] = c; 
             len++;
@@ -107,7 +114,14 @@ List* create_list(const char* file, int id)
         {
             if (len >= capacity) 
             { 
-                node->word = (char*)realloc(node->word, capacity + 1);
+                char* tmpp = (char*)realloc(node->word, capacity + 1);
+                if (tmpp == NULL) {
+                    free(node->word);
+                    return 1;
+                }
+                else {
+                    node->word = tmpp;
+                }
             }
             node->word[len] = '\0'; 
             len++;

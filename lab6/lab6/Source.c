@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 int is_alpha(char ch)
     return ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'));
 int comparesl(char* s1, char* s2)
@@ -98,7 +98,6 @@ List* create_list(const char* file, int id)
             { 
                 capacity *= 2;
                 node->word = (char*)realloc(node->word, capacity * sizeof(char));
-       
             }
             node->word[len] = c; 
             len++;

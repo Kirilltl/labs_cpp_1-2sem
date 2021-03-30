@@ -1,24 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
-//#include "func.h"
+#include<math.h>
+#include "func.h"
 int main()
 {
-	int mass[2][2] = {{4, 8},{9, -1}};//stroka stolbec
-	for (int i = 0; i < 2; i++)
-	{
-		for (int j = 0; j < 2; j++)
-		{
-			//mass[i][j] = i * j;
-			printf("%2d", mass[0][1]);
-		}
-		printf("\n");
-	}
+	int	MAX_I = 0;//STR
+	int	MAX_J = 0;//STL
+	printf("vvedite MAX_I & MAX_J \n");
+	int r=scanf("%d", &MAX_I);
+	r=scanf("%d", &MAX_J);
 
-	
-	
-	
-	
-	
-	//int index = return_response();
-	//printf("Index: %d \n", index);
+	double res = return_response( MAX_I,MAX_J);
+	printf("res = %lf \n", res);
+
 }

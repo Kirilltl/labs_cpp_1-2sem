@@ -1,6 +1,5 @@
-/*
 #ifndef _FUNC_H_
 #define _FUNC_H_
-int return_response();
+double return_response(double MAX_I, double MAX_J);
 #endif
-*/
+

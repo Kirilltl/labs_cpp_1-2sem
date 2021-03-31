@@ -3,14 +3,15 @@
 #include<math.h>
 double find_deviation(double MAX_I, double MAX_J)
 {
-	double** mass = (double**)malloc(MAX_I*sizeof(double*));
-	for (int i = 0; i < MAX_I; ++i)
+	double** mass = NULL;
+	mass = (double**)malloc(MAX_I*sizeof(double*));
+	for (int i = 0; i < MAX_I; i++)
 		mass[i] = (double*)malloc(MAX_J*sizeof(double));
 		for (int i = 0; i < MAX_I; i++)
 		for (int j = 0; j < MAX_J; j++)
 		{
 			printf("mass[%d][%d]=", i, j);
-			int r = scanf("%lf",&mass[i][j]);
+			int r = scanf("%lf", &mass[i][j]);
 		}
 	double res = 0;
 	for (int i = 0; i < MAX_I; i++)

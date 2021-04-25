@@ -16,10 +16,11 @@ double find_deviation(int MAX_I, int MAX_J, double* mass)
 		double sumkvad = 0;
 		for (int j = 0; j < MAX_J; j++)
 			sumkvad = sumkvad + pow(*(mass + i * MAX_I + j) - xsr, 2);
-		double sigma = sqrt(sumkvad / MAX_J);
-		if (sigma > res)
-			res = sigma;
-		printf("sigma = %lf \n", sigma);
+		//MAX_J = MAX_J - 1;
+		double s = sqrt(sumkvad / (MAX_J-1));
+		if (s > res)
+			res = s;
+		printf("s = %lf \n", s);
 	}
 	return res;
 }

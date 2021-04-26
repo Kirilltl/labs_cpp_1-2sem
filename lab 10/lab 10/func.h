@@ -12,4 +12,5 @@ struct List
 };
 List* create_list(const char* file);
 void delete_list(List* list);
+void delete_spaces(const char* file);
 #endif

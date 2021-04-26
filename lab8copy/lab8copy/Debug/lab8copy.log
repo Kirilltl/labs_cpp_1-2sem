@@ -1,2 +1,8 @@
 ﻿  function.cpp
+  main.cpp
+C:\github\labs\lab8copy\lab8copy\main.cpp(10,10): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\github\labs\lab8copy\lab8copy\main.cpp(11,6): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\github\labs\lab8copy\lab8copy\main.cpp(12,6): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\github\labs\lab8copy\lab8copy\main.cpp(22,12): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Создание кода...
   lab8copy.vcxproj -> C:\github\labs\lab8copy\Debug\lab8copy.exe

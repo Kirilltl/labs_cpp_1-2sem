@@ -115,10 +115,6 @@ void delete_spaces(const char* file)
     fclose(fp);
     fclose(fp2);
 }
-
-
-
-
     List* create_list(const char* file)
     {
         FILE* fp;
@@ -175,9 +171,6 @@ void delete_spaces(const char* file)
             }
             else if (!is_alpha(c) && !first_letter && !inserted)
             {
-
-
-
                 if (len >= capacity)
                 {
                     char* tmpp = (char*)realloc(node->word, capacity + 1);
@@ -217,3 +210,11 @@ void delete_spaces(const char* file)
     }
 
 
+
+
+
+
+                
+
+
+    

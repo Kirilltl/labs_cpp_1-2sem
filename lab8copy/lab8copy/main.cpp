@@ -9,9 +9,9 @@ int main()
 	printf("Enter the number of rows and columns accordingly:\n");
 	int r = scanf("%d", &MAX_I);
 	r = scanf("%d", &MAX_J);
-	r = scanf("window: %d", &window);
-	if (window >= MAX_J)
+	if ((MAX_I < 5) && (MAX_J < 5))
 	{
+		printf("error \n");
 		exit(1);
 	}
 	double* mass = (double*)malloc(MAX_I * MAX_J * sizeof(double));
@@ -21,7 +21,7 @@ int main()
 			printf("mass[%d][%d]=", i, j);
 			int r = scanf("%lf", mass + i*MAX_I + j);
 		}
-	double res = find_disp(MAX_I, MAX_J, mass, window);
+	double res = find_disp(MAX_I, MAX_J, mass);
 	printf("res = %lf \n", res);
 	free(mass);
 }

@@ -1,2 +1,4 @@
 C:\github\labs\lab2\lab2\Debug\lab2.exe
 C:\github\labs\lab2\lab2\Debug\lab2.pdb
+C:\github\labs\1 семестр\lab2\lab2\Debug\lab2.exe
+C:\github\labs\1 семестр\lab2\lab2\Debug\lab2.pdb

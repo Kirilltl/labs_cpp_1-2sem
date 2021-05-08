@@ -1,2 +1,0 @@
-C:\github\labs\lab 2 dop\lab 2 dop\Debug\lab 2 dop.exe
-C:\github\labs\lab 2 dop\lab 2 dop\Debug\lab 2 dop.pdb

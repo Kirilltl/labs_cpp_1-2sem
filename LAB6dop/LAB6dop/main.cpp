@@ -5,16 +5,9 @@ typedef struct node {
 	struct node* left;
 	struct node* right;
 } node;
-
-char is_letter(char str) {
-	if (((str >= 'A') && (str <= 'Z')) || ((str >= 'a') && (str <= 'z'))) {
-		return 1;
-	}
-	else {
-		return 0;
-	}
+char is_alpha(char str) {
+	return ((str >= 'A') && (str <= 'Z')) || ((str >= 'a') && (str <= 'z'));
 }
-
 int strcomp(char* s1, char* s2) {
 	while ((*s1 != 0) && (*s1 == *s2)) {
 		s1++;
@@ -22,7 +15,6 @@ int strcomp(char* s1, char* s2) {
 	}
 	return *s1 - *s2;
 }
-
 void add_node(node** root, char* word) {
 	int i = 0, len = 10;
 	if (!*root) {
@@ -30,7 +22,6 @@ void add_node(node** root, char* word) {
 		if (!*root) {
 			exit(1);
 		}
-
 		(*root)->value = (char*)malloc(len * sizeof(char));
 		while (word[i]) {
 			if (i == len) {
@@ -65,24 +56,18 @@ void add_node(node** root, char* word) {
 		add_node(&(*root)->right, word);
 	}
 }
-
-
-
-
 node* readFile(const char* file) {
 	FILE* fp;
 	if ((fp = fopen(file, "r")) == NULL)
 	{
 		exit(1);
 	}
-
 	node* root = NULL;
-
 	int a = 0, len = 10, i = 0;
 	char in_word = 0;
 	char* word = (char*)malloc(len * sizeof(char));
 	while ((a = fgetc(fp)) != EOF) {
-		if (is_letter(a)) {
+		if (is_alpha(a)) {
 			if (i == len) {
 				len *= 2;
 				char* tmp = word;
@@ -119,15 +104,10 @@ node* readFile(const char* file) {
 		add_node(&root, word);
 		free(word);
 	}
-	
 	fclose(fp);
 	return root;
-
 }
-
-
 void print_tree(node* root) {
-
 	if (root) {
 		print_tree(root->left);
 		printf("%s\n", root->value);
@@ -137,9 +117,7 @@ void print_tree(node* root) {
 		return;
 	}
 }
-
 void unite(node** dst, node* src) {
-
 	if (src) {
 		unite(dst, src->left);
 		add_node(dst, src->value);
@@ -149,21 +127,14 @@ void unite(node** dst, node* src) {
 		return;
 	}
 }
-
 int main() {
-
 	node* tree1 = readFile("C:\\github\\labs\\LAB6dop\\one.txt");
 	node* tree2 = readFile("C:\\github\\labs\\LAB6dop\\two.txt");
 	node* tree3 = readFile("C:\\github\\labs\\LAB6dop\\three.txt");
-	//printf("=======================================\n");
-
 	node* merge = NULL;
 	unite(&merge, tree1);
 	unite(&merge, tree2);
 	unite(&merge, tree3);
-	//printf("-----------------------------------------\n");
 	print_tree(merge);
-
-
 }
 

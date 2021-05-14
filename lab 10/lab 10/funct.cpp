@@ -51,6 +51,17 @@ void insert(List* list, Node* node)
     node->next = NULL;
     list->end = node;
 }
+int count_stars(char* word)
+{
+    int count = 0;
+    for (unsigned int i = 0; i < strlen(word); i++)
+        if (word[i] == '*')
+            count++;
+    if (count >= 2)
+        return 1;
+    else
+        return 0;
+}
 int double_quotes(char* word)
 {
     int counter = 0;
@@ -186,7 +197,7 @@ void delete_spaces(const char* file)
                 }
                 node->word[len] = '\0';
                 len++;
-                if (double_quotes(node->word))
+                if (double_quotes(node->word) || count_stars(node->word))
                     insert(list, node);
                 inserted = 1;
                 first_letter = 1;

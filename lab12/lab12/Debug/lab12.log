@@ -1,0 +1,8 @@
+﻿  FVector.cpp
+C:\github\labs\lab12\lab12\FVector.cpp(32,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  main.cpp
+C:\github\labs\lab12\lab12\main.cpp(50,22): warning C4305: аргумент: усечение из "double" в "float"
+C:\github\labs\lab12\lab12\main.cpp(26,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\github\labs\lab12\lab12\main.cpp(34,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Создание кода...
+  lab12.vcxproj -> C:\github\labs\lab12\Debug\lab12.exe

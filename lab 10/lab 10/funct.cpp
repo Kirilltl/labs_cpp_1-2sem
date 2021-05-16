@@ -197,7 +197,7 @@ void delete_spaces(const char* file)
                 }
                 node->word[len] = '\0';
                 len++;
-                if (double_quotes(node->word) || count_stars(node->word))
+                if ((double_quotes(node->word)) || (count_stars(node->word)))
                     insert(list, node);
                 inserted = 1;
                 first_letter = 1;

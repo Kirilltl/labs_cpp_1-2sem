@@ -6,9 +6,9 @@ printf("\t%d", M[i][j]);
 char symbols[5][2];
 symbols[0][1] = 'A';
 
-char* b;
-char** a;
-char*** product;
+char* sir1;
+int** sir2;
+char*** sir3;
 
 
 #include <iostream>

@@ -51,24 +51,24 @@ void insert(List* list, Node* node)
     node->next = NULL;
     list->end = node;
 }
-int count_stars(char* word)
-{
-    int count = 0;
-    for (unsigned int i = 0; i < strlen(word); i++)
-        if (word[i] == '*')
-            count++;
-    if (count >= 2)
-        return 1;
-    else
-        return 0;
-}
-int double_quotes(char* word)
+int four_quotes(char* word)
 {
     int counter = 0;
     for (unsigned int i = 0; i < strlen(word); i++)
         if (word[i] == '[' || word[i] == ']')
             counter++;
     if (counter >= 4)
+        return 1;
+    else
+        return 0;
+}
+int two_quotes(char* word)
+{
+    int counter = 0;
+    for (unsigned int i = 0; i < strlen(word); i++)
+        if (word[i] == '[' || word[i] == ']')
+            counter++;
+    if (counter >= 2)
         return 1;
     else
         return 0;
@@ -86,15 +86,16 @@ void delete_spaces(const char* file)
         exit(1);
     }
     char c = fgetc(fp);
-    int flag = 0;
+    int flag_space = 0;
+    int flag_star = 0;
     while (c != EOF)
     {
         c = fgetc(fp);
-        if (flag == 0)
+        if (flag_space == 0)
         {
             if (c == ' ')
             {
-                flag = 1;
+                flag_space = 1;
             }
             else
             {
@@ -105,20 +106,20 @@ void delete_spaces(const char* file)
         {
             if (c == ' ')
             {
-                flag = 1;
+                flag_space = 1;
             }
             else
             {
                 if (c == '[' || c == ']')
                 {
                     fputc(c, fp2);
-                    flag = 0;
+                    flag_space = 0;
                 }
                 else
                 {
                     fputc(' ', fp2);
                     fputc(c, fp2);
-                    flag = 0;
+                    flag_space = 0;
                 }
             }
         }
@@ -144,8 +145,13 @@ void delete_spaces(const char* file)
         int first_letter = 1;
         int inserted = 0;
         Node* node = NULL;
+        int flag_star = 0;
         while (c != EOF)
         {
+            if(c == '*')
+                flag_star += 1;
+            if(c == '\n')
+                flag_star = 0;
             if (is_alpha(c) && first_letter)
             {
                 len = 0;
@@ -197,8 +203,13 @@ void delete_spaces(const char* file)
                 }
                 node->word[len] = '\0';
                 len++;
-                if ((double_quotes(node->word)) || (count_stars(node->word)))
+                if (four_quotes(node->word) || 
+                    flag_star > 1  ||
+                    (flag_star == 1 && two_quotes(node->word)) )
+                {
                     insert(list, node);
+                    flag_star = 0;
+                }
                 inserted = 1;
                 first_letter = 1;
             }

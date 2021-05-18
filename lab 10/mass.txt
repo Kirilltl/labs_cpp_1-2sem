@@ -1,14 +1,14 @@
-int M[3][3];
-M[i][j] = i * j;
+int Z[3][3];
+Z[i][j] = i * j;
 printf("\t%d", M[i][j]);
 
 
 char symbols[5][2];
 symbols[0][1] = 'A';
 
-char* sir1;
-int** sir2;
-char*** sir3;
+char* sss1;
+char** sss2;
+char*** sss3;
 
 
 #include <iostream>

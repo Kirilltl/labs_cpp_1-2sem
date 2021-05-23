@@ -64,7 +64,7 @@ int main()
 	}
 	for (int i = 0; i < (Check); i++)
 		if (Poly_Result[i] != 0) {
-			TMP = printf("%lf*x^%d ", Poly_Result[i], Check - i);
+			TMP = printf("%lf*x^%d +", Poly_Result[i], Check - i);
 			printf("%d", TMP);
 			if ((TMP == 0) || (TMP < 0)) {
 				printf("0");
@@ -72,7 +72,7 @@ int main()
 		}
 	TMP = 0;
 	for (int i = Check; i <= (Check); i++)
-		TMP = printf("%lf ", Poly_Result[i]);
+		TMP = printf("%lf", Poly_Result[i]);
 	if ((TMP == 0) || (TMP < 0)) {
 		printf("0");
 	}
@@ -81,7 +81,7 @@ int main()
 	for (int i = 0; i < (PolyLength_2 - 1); i++)
 		if (Poly_Remainder[i] != 0) {
 
-			TMP = printf("%lf*x^%d ", Poly_Remainder[i], PolyLength_2 - i - 1);
+			TMP = printf("%lf*x^%d +", Poly_Remainder[i], PolyLength_2 - i - 1);
 			if ((TMP == 0) || (TMP < 0)) {
 				printf("0");
 			}
@@ -92,8 +92,8 @@ int main()
 	if ((TMP == 0) || (TMP < 0)) {
 		printf("0");
 	}
-	//free(Poly_Result);
-	//free(Poly_Remainder);
-	//free(Poly_1);
-	//free(Poly_2);
+	free(Poly_Result);
+	free(Poly_Remainder);
+	free(Poly_1);
+	free(Poly_2);
 }

@@ -2,11 +2,22 @@
 #include "func.h"
 #include <stdio.h>
 #include <stdlib.h>
+//void find_derivative() //нахождение производной
+//{
+//	for (int i = 0; i < n; i++)
+//	{
+//		if (i <= n - 1)
+//			k[i] = k[i + 1] * (i + 1);
+//		else
+//			k[n] = 0;
+//	}
+//}
+
 bool CheckInput(char s)
 {
 	return (((s >= '0') && (s <= '9')) || (s == '-') || (s == '.'));
 }
-int GetCharConvertToInt(const char* Caption, const char* ErrorCaption)
+int GetCharConvertToInt(const char* Caption, const char* ErrorCaption)//preobrazovanie
 {
 	char Char;
 	int Size = 100;
@@ -105,10 +116,10 @@ float GetCharConvertToFloat(const char* Caption, const char* ErrorCaption)
 }
 
 void DividePolynomsWithRemainder(float* Poly_1, int PolyLength_1, float* Poly_2, int PolyLength_2, float* Poly_Result, float* Poly_Remainder)
-
+//s ostatkom
 {
 
-	int LengthDifference = abs(PolyLength_1 - PolyLength_2);
+	int LengthDifference = abs(PolyLength_1 - PolyLength_2);//modul
 	int Temp = LengthDifference;
 
 	if (PolyLength_2 > PolyLength_1)

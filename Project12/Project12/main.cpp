@@ -94,7 +94,7 @@ public:
 		printf("%s\n", w);
 		for (int i = 19; i > 3; i--)
 			w[i] = w[i - 1];
-			w[3] = '';
+			w[3] = '7';
 			printf("%s\n", w);
 	}
 int main()

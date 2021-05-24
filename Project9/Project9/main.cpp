@@ -17,10 +17,14 @@ int main()
 	float* Poly_1 = (float*)malloc((PolyLength_1 + 1) * sizeof(float));
 	if (!Poly_1)
 		exit(1);
+	printf("START >>>>>> %d\n", Coef);
 	for (int i = PolyLength_1; i >= 0; i--)
 	{
-		sprintf(Array, "Enter factor x^%d = ", i);
+		printf("Enter factor x^%d = ", i);
+		//printf("before scanf >>>>>> %d\n", Coef);
+		//scanf("%f", &Coef);
 		Coef = GetCharConvertToFloat(Array, "Error factor\n");
+		printf(">>>>>>Coef %f\n", Coef);
 		if ((i == PolyLength_1) && (Coef == 0))
 		{
 			PolyLength_1--;
@@ -42,6 +46,7 @@ int main()
 	for (int i = PolyLength_2; i >= 0; i--)
 	{
 		sprintf(Array, "Enter factor x^%d = ", i);
+		//scanf("%lf\n", &Coef);
 		Coef = GetCharConvertToFloat(Array, "Error factor\n");
 		if ((i == PolyLength_2) && (Coef == 0))
 		{
@@ -64,15 +69,15 @@ int main()
 	}
 	for (int i = 0; i < (Check); i++)
 		if (Poly_Result[i] != 0) {
-			TMP = printf("%lf*x^%d +", Poly_Result[i], Check - i);
-			printf("%d", TMP);
+			TMP = printf("%lf*x^%d ", Poly_Result[i], Check - i);
+			//printf("<%d>", TMP);
 			if ((TMP == 0) || (TMP < 0)) {
 				printf("0");
 			}
 		}
 	TMP = 0;
 	for (int i = Check; i <= (Check); i++)
-		TMP = printf("%lf", Poly_Result[i]);
+		TMP = printf("%lf ", Poly_Result[i]);
 	if ((TMP == 0) || (TMP < 0)) {
 		printf("0");
 	}
@@ -81,7 +86,7 @@ int main()
 	for (int i = 0; i < (PolyLength_2 - 1); i++)
 		if (Poly_Remainder[i] != 0) {
 
-			TMP = printf("%lf*x^%d +", Poly_Remainder[i], PolyLength_2 - i - 1);
+			TMP = printf("%lf*x^%d ", Poly_Remainder[i], PolyLength_2 - i - 1);
 			if ((TMP == 0) || (TMP < 0)) {
 				printf("0");
 			}

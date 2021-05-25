@@ -1,9 +1,9 @@
 #include <iostream>
-#include "fString.h"
+#include "String.h"
 using namespace std;
 int main()
 {
-	MyString str("It's raining");
+	MyString str("weststring");
 	str.print();
 	MyString child(str);
 	child.print();

@@ -1,0 +1,3 @@
+﻿  func.cpp
+C:\github\labs\del_ILG\del_ILG\func.cpp(7,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  del_ILG.vcxproj -> C:\github\labs\del_ILG\Debug\del_ILG.exe

@@ -19,7 +19,7 @@ int main()
 	child.ins(7, '%');
 	child.print();
 	cout << "--- concat ---" << endl;
-	MyString cat("cats");
+	MyString cat("cts");
 	MyString cot("cots");
 	cat = cat + cot;
 	cat.print();

@@ -1,104 +1,59 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-#include "func.h"
-int main()
+void proizvodnaya(int* koef, int* step, int len)
 {
-	int PolyLength_1, PolyLength_2;
-	float Coef = 0;
-	char Array[32];
-	int flag = 0;
-	PolyLength_1 = GetCharConvertToInt("Enter degree of first multinomial\n", "Error degree\n");
-	if (PolyLength_1 > 10 || PolyLength_1 < 0)
+	for (int i = 0; i < len; i++)
 	{
-		printf("Error");
-		exit(1);
+		koef[i] *= step[i];
+		step[i]--;
 	}
-	float* Poly_1 = (float*)malloc((PolyLength_1 + 1) * sizeof(float));
-	if (!Poly_1)
-		exit(1);
-	printf("START >>>>>> %d\n", Coef);
-	for (int i = PolyLength_1; i >= 0; i--)
+}
+int len_polynoma(int* koef, int* step, int len)
+{
+	return step[0] + 1;
+}
+int main() {
+	const int len = 4;
+	int k[4] = { 8, 2, 10, 5 };
+	int s[4] = { 3, 2, 1, 0 };
+	int* a_koef = (int*)malloc(sizeof(int) * len);
+	int* a_step = (int*)malloc(sizeof(int) * len);
+	int* b_koef = (int*)malloc(sizeof(int) * len);
+	int* b_step = (int*)malloc(sizeof(int) * len);
+	int* c_koef = (int*)malloc(sizeof(int) * len);
+	int* c_step = (int*)malloc(sizeof(int) * len);
+	int* d_koef = (int*)malloc(sizeof(int) * len);
+	int* d_step = (int*)malloc(sizeof(int) * len);
+	for (int i = 0; i < len; i++)
 	{
-		printf("Enter factor x^%d = ", i);
-		//printf("before scanf >>>>>> %d\n", Coef);
-		//scanf("%f", &Coef);
-		Coef = GetCharConvertToFloat(Array, "Error factor\n");
-		printf(">>>>>>Coef %f\n", Coef);
-		if ((i == PolyLength_1) && (Coef == 0))
-		{
-			PolyLength_1--;
-		}
-		Poly_1[i] = Coef;
+		a_koef[i] = k[i];
+		a_step[i] = s[i];
+		b_koef[i] = k[i];
+		b_step[i] = s[i];
 	}
-	int PolyLength_1_TEMP = PolyLength_1;
-	PolyLength_2 = GetCharConvertToInt("Enter degree of second multinomial\n", "Error degree\n");
-	if (PolyLength_2 > 10 || PolyLength_2 < 0)
+	proizvodnaya(b_koef, b_step, len);
+	proizvodnaya(b_koef, b_step, len);
+	for (int i = 0; i < len; i++)
 	{
-		printf("Error");
-		exit(1);
+		printf(" %d\n ", b_koef[i]);
 	}
-	float* Poly_Remainder = (float*)malloc((PolyLength_2 + 1) * sizeof(float));
-	float* Poly_2 = (float*)malloc((PolyLength_2 + 1) * sizeof(float));
-	if (!Poly_2)
-		exit(1);
-	float* Poly_Result = (float*)malloc(((abs(PolyLength_1 - PolyLength_2) + 1) + 1) * sizeof(float));
-	for (int i = PolyLength_2; i >= 0; i--)
+	for (int i = 0; i < len; i++)
 	{
-		sprintf(Array, "Enter factor x^%d = ", i);
-		//scanf("%lf\n", &Coef);
-		Coef = GetCharConvertToFloat(Array, "Error factor\n");
-		if ((i == PolyLength_2) && (Coef == 0))
-		{
-			PolyLength_2--;
-			if (PolyLength_2 == 0)
-			{
-				printf("Division by '0'");
-				exit(1);
-			}
-		}
-		Poly_2[i] = Coef;
+		printf(" %d\n ", b_step[i]);
 	}
-	int PolyLength_2_TEMP = PolyLength_2;
-	DividePolynomsWithRemainder(Poly_1, PolyLength_1, Poly_2, PolyLength_2, Poly_Result, Poly_Remainder);
-	printf("\nResult of division (factors) = ");
-	int Check = PolyLength_1 - PolyLength_2;
-	int TMP = 0;
-	if ((PolyLength_1 - PolyLength_2) < 0) {
-		Check = 0;
+	printf(" ========\n ");
+	for (int i = 0; i < len; i++)
+	{
+		printf(" %d\n ", a_koef[i]);
 	}
-	for (int i = 0; i < (Check); i++)
-		if (Poly_Result[i] != 0) {
-			TMP = printf("%lf*x^%d ", Poly_Result[i], Check - i);
-			//printf("<%d>", TMP);
-			if ((TMP == 0) || (TMP < 0)) {
-				printf("0");
-			}
-		}
-	TMP = 0;
-	for (int i = Check; i <= (Check); i++)
-		TMP = printf("%lf ", Poly_Result[i]);
-	if ((TMP == 0) || (TMP < 0)) {
-		printf("0");
+	for (int i = 0; i < len; i++)
+	{
+		printf(" %d\n ", a_step[i]);
 	}
-	printf("\nRest (factors) = ");
-	TMP = 0;
-	for (int i = 0; i < (PolyLength_2 - 1); i++)
-		if (Poly_Remainder[i] != 0) {
+	c_koef[0] = a_koef[0] / b_koef[0];
+	c_step[0] = a_step[0] - b_step[0];
 
-			TMP = printf("%lf*x^%d ", Poly_Remainder[i], PolyLength_2 - i - 1);
-			if ((TMP == 0) || (TMP < 0)) {
-				printf("0");
-			}
-		}
-	TMP = 0;
-	for (int i = abs(PolyLength_2 - 1); i <= (PolyLength_2 - 1); i++)
-		TMP = printf("%lf ", Poly_Remainder[i]);
-	if ((TMP == 0) || (TMP < 0)) {
-		printf("0");
-	}
-	free(Poly_Result);
-	free(Poly_Remainder);
-	free(Poly_1);
-	free(Poly_2);
+	//for(int i=0; i<)
+
+
 }

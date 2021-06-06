@@ -1,3 +1,2 @@
 ﻿  main.cpp
-C:\github\labs\Project9\Project9\main.cpp(20,9): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "1" имеет тип "double"
   Project9.vcxproj -> C:\github\labs\Project9\Debug\Project9.exe

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "String.h"
+#include <assert.h>
 using namespace std;
 int main()
 {
@@ -10,8 +11,7 @@ int main()
 	MyString father = str;
 	father.print();
 	cout << "--- len ---" << endl;
-	child.len();
-	child.printf();
+	cout << child.len() << endl;
 	cout << "--- del_substr ---" << endl;
 	father.del_substr(4, 9);
 	father.print();
@@ -19,10 +19,19 @@ int main()
 	child.ins(7, '%');
 	child.print();
 	cout << "--- concat ---" << endl;
-	MyString cat("cts");
 	MyString cot("cots");
-	cat = cat + cot;
-	cat.print();
+	MyString res = str + cot;
+	res.print();
+
+	MyString s1 = "s1";//
+	s1.print();
+	assert(strcmp(s1.get(), "s1") == 0);
+	MyString s2 = "s2";
+	s2.print();
+	assert(strcmp(s2.get(), "s2") == 0);
+	MyString s3 = s1 + s2;
+	s3.print();
+	assert(strcmp(s3.get(), "s1s2") == 0);//
 }
 
 

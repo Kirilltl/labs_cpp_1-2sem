@@ -2,9 +2,15 @@
 #include "String.h"
 #include <assert.h>
 using namespace std;
+
+#define MAX_LEN 1000
+
 int main()
 {
-	MyString str("weststring");
+	char* s = new char[MAX_LEN];
+	cin >> s;
+	cout << s << endl;
+	MyString str(s);
 	str.print();
 	MyString child(str);
 	child.print();
@@ -13,13 +19,30 @@ int main()
 	cout << "--- len ---" << endl;
 	cout << child.len() << endl;
 	cout << "--- del_substr ---" << endl;
-	father.del_substr(4, 9);
+	int x;
+	int y;
+	cout << "Input x" << endl;
+	cin >> x;
+	cout << "Input y" << endl;
+	cin >> y;
+
+	father.del_substr(x, y);
 	father.print();
 	cout << "--- ins ---" << endl;
-	child.ins(7, '%');
+	int r;
+	cout << "Input r" << endl;
+	cin >> r;
+
+	char c;
+	cout << "Input c" << endl;
+	cin >> c;
+	child.ins(r, c);
 	child.print();
 	cout << "--- concat ---" << endl;
-	MyString cot("cots");
+	char* w = new char[MAX_LEN];
+	cin >> w;
+	cout << w << endl;
+	MyString cot(w);
 	MyString res = str + cot;
 	res.print();
 

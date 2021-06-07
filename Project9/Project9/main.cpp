@@ -1,18 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void proizvodnaya(int* koef, int* step, int len)
+int proizvodnaya(float* a, float* b, int len_a)
 {
-	for (int i = 0; i < len; i++)
+	for (int i = len_a-1; i >= 1 ; i--)
 	{
-		koef[i] *= step[i];
-		step[i]--;
+		b[i - 1] = a[i] * i;
 	}
+	return len_a - 1;
 }
-int len_polynoma(int* koef, int* step, int len)
-{
-	return step[0] + 1;
-}
+
 int main() {
 	//const int len = 4;
 
@@ -23,14 +20,27 @@ int main() {
 	int b[3] = { 1, 1, 1 };
 	*/
 	int len_a = 4;
-	int a[4] = { -42, 0,-12, 1 };
-	int len_b = 2;
-	int b[3] = { -3, 1 };
+	float a[4] = { 2.0, 6.0, 3.0, 4.0 };
+
+	int len_b1 = 4;
+	float b1[4] = { 0.0, 0.0, 0.0 ,0.0 };
+
+	int len_b = 4;
+	float b[4] = { 0.0, 0.0, 0.0 ,0.0 };
+
+	len_b = proizvodnaya(a, b1, len_a);
+	len_b = proizvodnaya(b1, b, len_b);
+
+	for (int i = 0; i < len_b; i++)
+	{
+		printf(" b[%d]=%f \n", i, b[i]);
+		printf(" len_b = %d\n", len_b);
+	}
 
 
-	int c[4] = { 0,0,0,0 };
+	float c[4] = { 0,0,0,0 };
 	int len_d = 4;
-	int d[4] = { 0,0,0,0 };
+	float d[4] = { 0,0,0,0 };
 
 	//proizvodnaya(a, len);
 	//proizvodnaya( b_step, len);
@@ -44,19 +54,19 @@ int main() {
 	{
 
 		c[j] = a[len_a - 1 - k] / b[len_b - 1];
-		printf("     c[%d] %d \n ", j, c[j]);
+		printf("     c[%d] %f \n ", j, c[j]);
 
 		for (int i = 0; i < len_b; i++)
 		{
 			d[i + j] = b[i] * c[j];
-			printf(" d[%d] %d \n ", i + 1, d[i + 1]);
+			printf(" d[%d] %f \n ", i + 1, d[i + 1]);
 		}
 
 		for (int i = 0; i < len_a; i++)
 		{
 			//printf(" a[%d] = a[%d] - d[%d]   %d = %d - %d  \n ", i, i, i, a[i], a[i], d[i]);
 			a[i] = a[i] - d[i];
-			printf(" a[%d] %d \n ", i, a[i]);
+			printf(" a[%d] %f \n ", i, a[i]);
 		}
 
 		for (int i = 0; i < len_d; i++)
@@ -70,7 +80,7 @@ int main() {
 	for (int i = len_c-1; i>=0; i--)
 	{
 		if(c[i] != 0)
-			printf(" %dX^%d ", c[i], i);
+			printf(" %fX^%d ", c[i], i);
 	}
 	printf("\n");
 
@@ -78,7 +88,7 @@ int main() {
 	for (int i = len_a-1; i >= 0; i--)
 	{
 		if (a[i] != 0)
-			printf(" %dX^%d ", a[i], i);
+			printf(" %fX^%d ", a[i], i);
 	}
 	printf("\n");
 

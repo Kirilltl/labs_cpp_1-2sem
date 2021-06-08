@@ -112,7 +112,7 @@ void MyString::ins(unsigned int pos, char c)
 }
 MyString MyString::operator+(const MyString& s)  const
 {
-	MyString newstr=*this;//
+	MyString newstr=*this;
 	unsigned size = length_word(m_str) + length_word(s.get()) + 1;
 	char* tmp = new char[size];
 	int j = 0;

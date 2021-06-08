@@ -1,95 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-int proizvodnaya(float* a, float* b, int len_a)
+#include "func.h"
+int main() 
 {
-	for (int i = len_a-1; i >= 1 ; i--)
+	int len_a = 0;
+	int degr = 0;
+	int counter = 0;
+	printf("Input a degree\n");
+	int r = scanf("%d", &degr);
+	len_a = degr + 1;
+	float* a = (float*)malloc(sizeof(float) * len_a);
+	if (a == NULL)
 	{
-		b[i - 1] = a[i] * i;
+		exit(1);
 	}
-	return len_a - 1;
-}
-
-int main() {
-	//const int len = 4;
-
-	/*
-	int len_a = 4;
-	int a[4] = { 2, 6, 3, 4 };
-	int len_b = 3;
-	int b[3] = { 1, 1, 1 };
-	*/
-	int len_a = 4;
-	float a[4] = { 2.0, 6.0, 3.0, 4.0 };
-
-	int len_b1 = 4;
-	float b1[4] = { 0.0, 0.0, 0.0 ,0.0 };
-
-	int len_b = 4;
-	float b[4] = { 0.0, 0.0, 0.0 ,0.0 };
-
-	len_b = proizvodnaya(a, b1, len_a);
-	len_b = proizvodnaya(b1, b, len_b);
-
-	for (int i = 0; i < len_b; i++)
+	for (int i = 0; i < len_a; i++)
 	{
-		printf(" b[%d]=%f \n", i, b[i]);
-		printf(" len_b = %d\n", len_b);
+		printf("Input coef[%d]\n", i);
+		int t = scanf("%f", &a[i]);
+		if (t == NULL)
+			exit(1);
 	}
-
-
-	float c[4] = { 0,0,0,0 };
-	int len_d = 4;
-	float d[4] = { 0,0,0,0 };
-
-	//proizvodnaya(a, len);
-	//proizvodnaya( b_step, len);
-
-	printf(" ========\n ");
-
-	const int len_c =  len_a - len_b + 1;
-
-
-	for (int j = len_c - 1, k=0; j>=0; j--, k++)
-	{
-
-		c[j] = a[len_a - 1 - k] / b[len_b - 1];
-		printf("     c[%d] %f \n ", j, c[j]);
-
-		for (int i = 0; i < len_b; i++)
-		{
-			d[i + j] = b[i] * c[j];
-			printf(" d[%d] %f \n ", i + 1, d[i + 1]);
-		}
-
-		for (int i = 0; i < len_a; i++)
-		{
-			//printf(" a[%d] = a[%d] - d[%d]   %d = %d - %d  \n ", i, i, i, a[i], a[i], d[i]);
-			a[i] = a[i] - d[i];
-			printf(" a[%d] %f \n ", i, a[i]);
-		}
-
-		for (int i = 0; i < len_d; i++)
-		{
-			d[i] = 0;
-		}
-		printf(" ========= \n");
-	}
-
-	printf(" ===== RESULT ==== \n");
-	for (int i = len_c-1; i>=0; i--)
-	{
-		if(c[i] != 0)
-			printf(" %fX^%d ", c[i], i);
-	}
-	printf("\n");
-
-	printf(" ===== OSTATOK ==== \n");
-	for (int i = len_a-1; i >= 0; i--)
-	{
-		if (a[i] != 0)
-			printf(" %fX^%d ", a[i], i);
-	}
-	printf("\n");
-
+	division(a, len_a);
+	free(a);
 }

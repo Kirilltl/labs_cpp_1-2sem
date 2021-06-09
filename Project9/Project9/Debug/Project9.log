@@ -1,5 +1,4 @@
-﻿  func.cpp
-  main.cpp
+﻿  main.cpp
 C:\github\labs\Project9\Project9\main.cpp(10,10): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\github\labs\Project9\Project9\main.cpp(20,11): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   Project9.vcxproj -> C:\github\labs\Project9\Debug\Project9.exe

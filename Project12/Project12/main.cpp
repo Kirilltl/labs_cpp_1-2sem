@@ -1,7 +1,7 @@
 #include <iostream>
 #include "String.h"
 using namespace std;
-#define MAX_LEN 1000
+#define MAX_LEN 100
 int main()
 {
 	char* s = new char[MAX_LEN];

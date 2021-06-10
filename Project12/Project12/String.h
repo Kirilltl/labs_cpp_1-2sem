@@ -12,8 +12,9 @@ public:
 	void set(char* s);
 	~MyString();
 	void print() const;
-	void del_substr(unsigned int start, unsigned int end);
-	void ins(unsigned int pos, char c);
+	bool check_polindrom() const;
+	bool del_substr(unsigned int start, unsigned int end);
+	bool ins(unsigned int pos, char c);
 	MyString operator+(const MyString& s)  const;
 	int len() const;
 };

@@ -58,38 +58,56 @@ void MyString::print() const
 {
 	cout << m_str << endl;
 }
-void MyString::del_substr(unsigned int start, unsigned int end)
+bool MyString::check_polindrom() const
 {
-	if (end == start)
-		return;
+	int len = length_word(m_str);
+	for (int i = 0; i < len / 2; ++i)
+	{
+		if (m_str[i] != m_str[len - i - 1])
+		{
+			return false;
+		}
+	}
+	return true;
+}
+bool MyString::del_substr(unsigned int start, unsigned int end)
+{
 	if (!m_str)
-		return;
+	{
+		return false;
+	}
 	if (end < start)
-		return;
+	{
+		return false;
+	}
+	if (end < 0 && start < 0)
+	{
+		return false;
+	}
 	if (end > length_word(m_str))
-		return;
+		return false;
 	unsigned size = length_word(m_str) - (end - start);
 	if (size < 0)
-		return;
+		return false;
 	char* tmp = new char[size];
 	if (!tmp)
-		exit(1);
+		return false;
 	int j = 0;
 	for (unsigned int i = 0; i < length_word(m_str) + 1; i++)
 	{
 		if (i >= start && i <= end)
 			continue;
 		tmp[j] = m_str[i];
-
 		j++;
 	}
 	delete[] m_str;
 	m_str = tmp;
+	return true;
 }
-void MyString::ins(unsigned int pos, char c)
+bool MyString::ins(unsigned int pos, char c)
 {
 	if (pos > length_word(m_str))
-		exit(1);
+		return false;
 	char* tmp = new char[length_word(m_str) + 2];
 	int j = 0;
 	for (unsigned int i = 0; i < length_word(m_str) + 2; i++)
@@ -109,6 +127,7 @@ void MyString::ins(unsigned int pos, char c)
 	}
 	delete[] m_str;
 	m_str = tmp;
+	return true;
 }
 MyString MyString::operator+(const MyString& s)  const
 {
@@ -127,7 +146,7 @@ MyString MyString::operator+(const MyString& s)  const
 	delete[] newstr.m_str;
 	newstr.m_str = tmp;
 	return newstr;
-}
+}                                                                                                                                 
 int MyString::len() const
 {
 	return length_word(m_str);

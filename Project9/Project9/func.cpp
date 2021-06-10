@@ -10,25 +10,25 @@ int proizvodnaya(float* a, float* b, int len_a)
 }
 void division(float* a, int len_a)
 {
-	float* b1 = (float*)malloc(sizeof(float) * len_a); // for 1 proizvodnaya
+	float* b1 = (float*)malloc(sizeof(float) * len_a); 
 	if (b1 == NULL)
 	{
-		exit(1);
+		return;
 	}
-	float* b = (float*)malloc(sizeof(float) * len_a);  // for 2 proizvodnaya
+	float* b = (float*)malloc(sizeof(float) * len_a);  
 	if (b == NULL)
 	{
-		exit(1);
+		return;
 	}
 	float* c = (float*)malloc(sizeof(float) * len_a);
 	if (c == NULL)
 	{
-		exit(1);
+		return;
 	}
 	float* d = (float*)malloc(sizeof(float) * len_a);
 	if (d == NULL)
 	{
-		exit(1);
+		return;
 	}
 	for (int i = 0; i < len_a; i++)
 	{
@@ -44,12 +44,12 @@ void division(float* a, int len_a)
 	const int len_c = len_a - len_b + 1;
 	for (int j = len_c - 1, k = 0; j >= 0; j--, k++)
 	{
-		if(b[len_b - 1]!=NULL)
+		if (b[len_b - 1] != NULL)
 			c[j] = a[len_a - 1 - k] / b[len_b - 1];
 		else
 		{
 			printf("ERROR\n");
-			exit(1);
+			return;
 		}
 		for (int i = 0; i < len_b; i++)
 		{
@@ -65,18 +65,38 @@ void division(float* a, int len_a)
 		}
 	}
 	printf("QUOTIENT\n");
-	for (int i = len_c - 1; i >= 0; i--)
+	bool flag=false;
+	for (int i = len_c - 1; i > 0; i--)
 	{
 		if (c[i] != 0)
-			printf(" %fX^%d ", c[i], i);
+		{
+			if (i != 0 && c[i] > 0 && flag)
+				printf("+");
+			flag = true;
+			printf("%fX^%d", c[i], i);
+		}
 	}
-	printf("\n");
+	if(c[0]>0 && flag)
+		printf("+");
+	if (c[0] != 0)
+		printf("%f\n",c[0]);
+	else
+		printf("\n");
 	printf("REMAINDER\n");
-	for (int i = len_a - 1; i >= 0; i--)
+	flag = false;
+	for (int i = len_a - 1; i > 0; i--)
 	{
-		printf(" %fX^%d ", a[i], i);
+		if (a[i] != 0)
+		{
+			if (i != 0 && a[i] > 0 && flag)
+				printf("+");
+			flag = true;
+			printf("%fX^%d", a[i], i);
+		}
 	}
-	printf("\n");
+	if (a[0] > 0 && flag)
+		printf("+");
+	printf("%f\n", a[0]);
 	free(b);
 	free(b1);
 	free(c);

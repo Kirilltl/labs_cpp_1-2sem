@@ -12,15 +12,16 @@ int main()
 	float* a = (float*)malloc(sizeof(float) * len_a);
 	if (a == NULL)
 	{
-		exit(1);
+		return 1;
 	}
 	for (int i = 0; i < len_a; i++)
 	{
 		printf("Input coef[%d]\n", i);
 		int t = scanf("%f", &a[i]);
 		if (t == NULL)
-			exit(1);
+			return 1;
 	}
 	division(a, len_a);
 	free(a);
+	return 0;
 }

@@ -13,6 +13,11 @@ int main()
 	MyString father = str;
 	cout << "--- len ---" << endl;
 	cout << child.len() << endl;
+	if (child.check_polindrom())
+		cout << "Word "<< child.get() <<" is polindrom";
+	else
+		cout << "Word "<< child.get() <<" isn't polindrom";
+	printf("\n");
 	cout << "--- del_substr ---" << endl;
 	int x;
 	int y;
@@ -20,8 +25,10 @@ int main()
 	cin >> x;
 	cout << "Input last index" << endl;
 	cin >> y;
-	father.del_substr(x, y);
-	father.print();
+	if (father.del_substr(x, y))
+		father.print();
+	else
+		printf("ERROR\n");
 	cout << "--- ins ---" << endl;
 	int r;
 	cout << "Input index" << endl;
@@ -29,15 +36,28 @@ int main()
 	char c;
 	cout << "Input symbol" << endl;
 	cin >> c;
-	child.ins(r, c);
-	child.print();
+	if (child.ins(r, c))
+		child.print();
+	else
+		printf("ERROR\n");
 	cout << "--- concat ---" << endl;
 	char* w = new char[MAX_LEN];
 	cout << "Enter the string to add" << endl;
 	cin >> w;
 	MyString cot(w);
+	if (cot.check_polindrom())
+		cout << "Word "<< cot.get() <<" is polindrom";
+	else
+		cout << "Word "<< cot.get() <<" isn't polindrom";
+	printf("\n");
 	MyString res = str + cot;
 	res.print();
+	if (res.check_polindrom())
+		cout << "Word "<< res.get() <<" is polindrom";
+	else
+		cout << "Word "<< res.get() <<" isn't polindrom";
+	printf("\n");
+	return 0;
 }
 
 

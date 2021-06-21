@@ -15,9 +15,11 @@ void modulo_cast(int* arr, int size)
 	int a = 0;
 	for (int i = size; i >= 0; i--)
 	{
-		arr[i] = arr[i] % 2;
+		arr[i] = arr[i] % 11;
 		if (arr[i] == -1)
-			arr[i] = 1;
+			arr[i] = 10;
+		if (arr[i] == 11)
+			arr[i] = 0;
 	}
 }
 

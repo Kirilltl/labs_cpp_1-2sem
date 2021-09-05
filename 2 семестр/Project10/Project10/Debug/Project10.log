@@ -1,0 +1,6 @@
+﻿  func.cpp
+C:\github\labs\Project10\Project10\func.cpp(79,15): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\github\labs\Project10\Project10\func.cpp(84,16): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\github\labs\Project10\Project10\func.cpp(133,15): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  main.cpp
+  Project10.vcxproj -> C:\github\labs\Project10\Debug\Project10.exe

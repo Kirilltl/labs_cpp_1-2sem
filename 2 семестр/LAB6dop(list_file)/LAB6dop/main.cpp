@@ -128,9 +128,9 @@ void unite(node** dst, node* src) {
 	}
 }
 int main() {
-	node* tree1 = readFile("C:\\github\\labs\\LAB6dop\\one.txt");
-	node* tree2 = readFile("C:\\github\\labs\\LAB6dop\\two.txt");
-	node* tree3 = readFile("C:\\github\\labs\\LAB6dop\\three.txt");
+	node* tree1 = readFile("C:\\github\\labs\\LAB6dop(list_file)\\one.txt");
+	node* tree2 = readFile("C:\\github\\labs\\LAB6dop(list_file)\\two.txt");
+	node* tree3 = readFile("C:\\github\\labs\\LAB6dop(list_file)\\three.txt");
 	node* merge = NULL;
 	unite(&merge, tree1);
 	unite(&merge, tree2);

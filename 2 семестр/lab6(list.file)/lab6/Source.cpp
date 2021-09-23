@@ -156,9 +156,9 @@ void delete_list(List* list)
 }
 int main()
 {
-    List* one = create_list("C:\\github\\labs\\lab6\\Debug\\one.txt", 1);
-    List* two = create_list("C:\\github\\labs\\lab6\\Debug\\two.txt", 2);
-    List* three = create_list("C:\\github\\labs\\lab6\\Debug\\three.txt", 3);
+    List* one = create_list("C:\\github\\labs\\lab6(list.file)\\Debug\\one.txt", 1);
+    List* two = create_list("C:\\github\\labs\\lab6(list.file)\\Debug\\two.txt", 2);
+    List* three = create_list("C:\\github\\labs\\lab6(list.file)\\Debug\\three.txt", 3);
     print_list(one);
     print_list(two);
     print_list(three);

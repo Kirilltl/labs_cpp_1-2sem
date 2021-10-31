@@ -3,7 +3,6 @@
 #include <iostream>
 #include<fstream>
 using namespace std;
-
 void Config::add(const std::string& key, int val_int)
 {
 	Value v;
@@ -27,7 +26,6 @@ void Config::erase_int(const std::string& key)
 		throw runtime_error("key is good but type is wrong");
 	}
 }
-
 void Config::erase_str(const std::string& key) {
 	if (m[key].is_int == false) {
 		m.erase(key);
@@ -52,8 +50,6 @@ int Config::find_int(const std::string& key) {
 		throw runtime_error("key is good but type is wrong");
 	}
 }
-
-
 std::string Config::find_str(const std::string& key) {
 	map<string, Value>::iterator it = m.find(key);
 	if (it == m.end())
@@ -69,7 +65,6 @@ std::string Config::find_str(const std::string& key) {
 		throw runtime_error("key is good but type is wrong");
 	}
 }
-//operator<<; //для вывода на экран
 void Config::load(const std::string& filename) {
 	ifstream fin;
 	fin.open(filename);
@@ -79,37 +74,22 @@ void Config::load(const std::string& filename) {
 	{
 		string key = tmp.substr(0, tmp.find('='));
 		string val = tmp.substr(tmp.find('=') + 1, tmp.size());
-		
-
-		
 		int val_int = atoi(val.c_str());
-		cout << val_int << endl;
-
+		if (val_int != 0)
+			cout << val_int << endl;
 		if (val_int == 0 && val != "0")
 		{
-			cout << "eto stroka!" << endl;
 			m[key].val_str = val;
 			m[key].is_int = false;
 		}
 		else
 		{
-			cout << "eto chislo" << endl;
 			m[key].val_int = val_int;
 			m[key].is_int = true;
 		}
-
-		cout << "=========" << endl;
-		
 	}
-
+	fin.close();
 }
-
-//operator<<
-//{
-//	for (map <string, Value> ::iterator it = m.begin(); it != m.end(); it++) {
-		//cout << "m[" << it->first << "] = " << it->second << endl;
-	//}
-//}
 void Config::save(const std::string& filename) {
 	ofstream fout;
 	fout.open(filename);

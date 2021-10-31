@@ -8,19 +8,19 @@ int main() {
 	try
 	{
 		{
-			Set<int> s;
-			s.insert(1);
-			s.insert(6);
-			s.insert(7);
+			Set<double> s;
+			s.insert(1.02);
+			s.insert(6.01);
+			s.insert(2.02);
 			cout << "	The content of the first set:" << endl;
 			s.print_all();
-			Set<int> s2;
-			s2.insert(1);
-			s2.insert(2);
-			s2.insert(4);
+			Set<double> s2;
+			s2.insert(1.01);
+			s2.insert(2.02);
+			s2.insert(4.06);
 			cout << "	The content of the second set:" << endl;
 			s2.print_all();
-			Set<int> n;
+			Set<double> n;
 			s.intersect(s2, n);
 			cout << "	Intersect:" << endl;
 			n.print_all();

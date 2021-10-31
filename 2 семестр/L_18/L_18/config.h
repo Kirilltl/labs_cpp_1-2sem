@@ -19,8 +19,7 @@ public:
 	void erase_str(const std::string& key);
 	int find_int(const std::string& key);
 	std::string find_str(const std::string& key);
-	//operator<<; //для вывода на экран
-	void load(const std::string& filename); //загрузка из файла
+	void load(const std::string& filename); 
 	void save(const std::string& filename);
 };
 

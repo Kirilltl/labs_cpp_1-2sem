@@ -7,61 +7,43 @@
 #include <vector> 
 #include <string> 
 using namespace std;
-void Graph::adjlist2matr(const Adjlist& a)
+//0 1 1 0 0 0 1
+//1 0 1 1 0 0 0
+//1 1 0 0 0 0 0
+//0 1 0 0 1 0 0
+//0 0 0 1 0 1 0
+//0 0 0 0 1 0 1
+//1 0 0 0 0 1 0
+class File
 {
-    /*for (int i = 0; i < a.size(); i++)
+private:
+    ifstream mfile;
+public:
+    File(){ mfile = ifstream("C:\\temp\\matr.txt"); }
+    ~File(){ mfile.close(); }             
+    bool getln(string& str)
     {
-        cout << "a[" << i << "]: ";
-        for (int j = 0; j < a[i].size(); j++)
-            cout << a[i][j] << " ";
-        cout << endl;
-    }*/
-    m.resize(a.size());
-    for (int i = 0; i < a.size(); i++)
-    {
-        m[i].resize(a.size());
+        getline(mfile, str);
+        return !mfile.eof();
     }
-    for (int i = 0; i < a.size(); i++)
-    {
-        for (int j = 0; j < a[i].size(); j++)
-        {
-            int current = a[i][j];
-            m[i][current] = 1;
-        }
-    }
-    cout << endl;
-}
-
-Adjlist Graph::read()
-{
-    int t = 0;
+};
+Adjmatr Graph::read()
+{   
     int n;
-    Adjlist a;
-    ifstream file("C:\\temp\\input.txt");
+    File f;
     string str;
-
-    while (getline(file, str))
-    {
+    //f.getln(str)
+    while (f.getln(str))
+    {       
         istringstream ss(str);
-
         vector <int> v;
         while (ss >> n) {
             v.push_back(n);
         }
-        a.push_back(v);
+        m.push_back(v);
     }
-    file.close();
-    for (int i = 0; i < a.size(); i++)
-    {
-        for (unsigned j = 0; j < a[i].size(); j++)
-            if (a[i][j] >= a.size()) {
-                cout << "error" << endl;
-                exit(1);
-            }
-    }
-    return a;
+    return m;
 }
-
 void Graph::bfs(int req)
 {
     struct Edge {
@@ -72,8 +54,9 @@ void Graph::bfs(int req)
     stack<Edge> Edges;
     Edge e;
     vector<int> nodes;
+    Adjmatr a;
     nodes.resize(m.size());
-    for (int i = 0; i < m.size(); i++)
+    for (unsigned int i = 0; i < m.size(); i++)
         nodes[i] = 0;
     req--;
     Queue.push(0);
@@ -82,7 +65,7 @@ void Graph::bfs(int req)
         int node = Queue.front();
         Queue.pop();
         nodes[node] = 2;
-        for (int j = 0; j < m.size(); j++)
+        for (unsigned int j = 0; j < m.size(); j++)
         {
             if (m[node][j] == 1 && nodes[j] == 0)
             {
@@ -95,16 +78,17 @@ void Graph::bfs(int req)
                     break;
             }
         }
-        cout << node + 1 << endl;
+        
+        cout <<  node + 1 << endl;
     }
-    cout << "how to go to this vertex " << req + 1 << endl;
+    cout << "how to go to vertex " << req + 1 << endl;
     cout << req + 1;
     while (!Edges.empty()) {
         e = Edges.top();
         Edges.pop();
-            if (e.end == req) {
-                req = e.begin;
-                cout << " <- " << req + 1;
-            }
+        if (e.end == req) {
+            req = e.begin;
+            cout << " <- " << req + 1;
+        }
     }
 }

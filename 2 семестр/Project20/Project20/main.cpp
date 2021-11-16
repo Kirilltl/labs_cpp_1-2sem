@@ -1,20 +1,13 @@
 #include "graph.h"
 #include <iostream>
-//#include <queue> 
-//#include <stack> 
-//#include <fstream> 
-//#include <sstream> 
-//#include <vector> 
-//#include <string> 
 using namespace std;
 int main()
 {
-    int req;
+    int req=0;
     cout << "N = ";
     cin >> req;
     Graph g;
-    Adjlist a = g.read();
-    g.adjlist2matr(a);
+    g.read();
     g.bfs(req);
     return 0;
 }

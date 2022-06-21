@@ -76,9 +76,8 @@ void Graph::bfs(int req)
                 Edges.push(e);
                 if (node == req)
                     break;
-            }
-        }
-        
+            }           
+        }    
         cout <<  node + 1 << endl;
     }
     cout << "how to go to vertex " << req + 1 << endl;

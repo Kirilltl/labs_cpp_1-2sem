@@ -1,0 +1,6 @@
+﻿  config.cpp
+C:\github\labs\2 семестр\L_dop_18\L_dop_18\config.h(25,3): warning C4996: '_itoa': This function or variable may be unsafe. Consider using _itoa_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  main.cpp
+C:\github\labs\2 семестр\L_dop_18\L_dop_18\config.h(25,3): warning C4996: '_itoa': This function or variable may be unsafe. Consider using _itoa_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Создание кода...
+  L_dop_18.vcxproj -> C:\github\labs\2 семестр\L_dop_18\Debug\L_dop_18.exe
